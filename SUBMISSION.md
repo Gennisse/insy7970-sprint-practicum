@@ -26,13 +26,19 @@ GitHub repository URL: https://github.com/Gennisse/insy7970-sprint-practicum.git
 
 - Sprint 2 theme: preview example rows with a `--head N` option while keeping the Sprint 1 summary behavior.
 - Codex prompt used before editing `sprint2.md`: `Update docs/specs/sprint2.md so Sprint 2 focuses on previewing example rows from the CSV. Keep the spec concise, include a new theme, 3-5 user requirements, and make sure it still builds on Sprint 1 behavior. Do not edit code yet.`
-- To check the implementation shape, I compared the Sprint 2 spec against the existing Sprint 1 behavior, reread the repo scaffold, and verified that the new theme stayed tied to one coherent feature area instead of drifting into unrelated analytics. The main finding was that the existing project still only has the starter scaffold, so Sprint 2 should extend the summary output before adding anything more advanced.
-- Sprint 2 commit: `542c3e2` (`Update submission notes with sprint commit`)
+- To check the implementation, I ran the CLI on `data/test.csv` with `--head 3` and reviewed the output to make sure it still showed the row count and column names from Sprint 1 while adding a readable example-row table. I also ran the test suite with `python -m unittest discover` and confirmed it passed after adding coverage for row counting, short previews, and quoted commas.
+- Sprint 2 commit: `05379ba` (`Implement Sprint 2 row preview`)
 - Sprint 2 was pushed to GitHub successfully on `origin/main` after the commit.
-- Sprint 2 definition of done was not fully met yet in code because the repository still contains the starter CLI; the spec now defines the next implementation target clearly.
+- Sprint 2 definition of done was met because the CLI now accepts `--head N`, preserves the Sprint 1 summary, prints a readable preview, and handles short files cleanly.
 
 ## Workflow reflection
 
+Building the second sprint as a coherent preview feature made the scope feel much cleaner than trying to add several unrelated analytics in one step. The most helpful check was running the tool against the provided CSV and comparing that output with the tests, because that quickly showed whether the summary and preview stayed aligned. The remaining limitation is that the tool still uses a simple text table rather than a richer report, which is fine for this sprint but leaves room for a later iteration.
+
 ## Practicum feedback
 
+The staged sprint loop worked well: define the feature theme, update the spec, implement the smallest useful increment, then verify it with an actual run and tests. It was also helpful to keep the preview requirement tied to the existing summary output, because that prevented the sprint from drifting into a different project. The instructions were clear, and the main thing I would keep doing is checking the real CLI output before treating a sprint as done.
+
 ## Unresolved question
+
+None at this stage.
