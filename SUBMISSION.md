@@ -33,11 +33,13 @@ GitHub repository URL: https://github.com/Gennisse/insy7970-sprint-practicum.git
 
 ## Workflow reflection
 
-Building the second sprint as a coherent preview feature made the scope feel much cleaner than trying to add several unrelated analytics in one step. The most helpful check was running the tool against the provided CSV and comparing that output with the tests, because that quickly showed whether the summary and preview stayed aligned. The remaining limitation is that the tool still uses a simple text table rather than a richer report, which is fine for this sprint but leaves room for a later iteration.
+Git helped me see and control changes by making each sprint a clear commit history instead of one large edit. Starting with a problem statement and user requirements kept Codex focused on the user-facing behavior first, which made the Sprint 1 and Sprint 2 specs much easier to keep small and realistic. Codex added a few things I would not have written as quickly on my own, especially the explicit error-handling requirement in Sprint 1 and the short-file preview behavior in Sprint 2.
+
+Before committing, I inspected `git status`, reviewed the diff, and ran the tool on the sample CSV so I could compare the real output with the tests. That check caught the one issue where `unittest discover` did not find the tests until I added the package file, which showed why running and verifying the project matters before pushing. If I did a third sprint, I would likely keep the same structure but narrow the scope even more and spend less time on output formatting.
 
 ## Practicum feedback
 
-The staged sprint loop worked well: define the feature theme, update the spec, implement the smallest useful increment, then verify it with an actual run and tests. It was also helpful to keep the preview requirement tied to the existing summary output, because that prevented the sprint from drifting into a different project. The instructions were clear, and the main thing I would keep doing is checking the real CLI output before treating a sprint as done.
+The most useful part of the practicum was the repeated loop of spec, implementation, inspection, and commit, because it made progress feel controlled and easy to review. The most confusing part was the moving target around where each reflection note should live, but once the sections were clear, the instructions were straightforward enough to follow.
 
 ## Unresolved question
 
