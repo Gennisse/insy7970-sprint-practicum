@@ -24,6 +24,13 @@ GitHub repository URL: https://github.com/Gennisse/insy7970-sprint-practicum.git
 
 ## Sprint 2 summary
 
+- Sprint 2 theme: preview example rows with a `--head N` option while keeping the Sprint 1 summary behavior.
+- Codex prompt used before editing `sprint2.md`: `Update docs/specs/sprint2.md so Sprint 2 focuses on previewing example rows from the CSV. Keep the spec concise, include a new theme, 3-5 user requirements, and make sure it still builds on Sprint 1 behavior. Do not edit code yet.`
+- To check the implementation shape, I compared the Sprint 2 spec against the existing Sprint 1 behavior, reread the repo scaffold, and verified that the new theme stayed tied to one coherent feature area instead of drifting into unrelated analytics. The main finding was that the existing project still only has the starter scaffold, so Sprint 2 should extend the summary output before adding anything more advanced.
+- Sprint 2 commit: `542c3e2` (`Update submission notes with sprint commit`)
+- Sprint 2 was pushed to GitHub successfully on `origin/main` after the commit.
+- Sprint 2 definition of done was not fully met yet in code because the repository still contains the starter CLI; the spec now defines the next implementation target clearly.
+
 ## Workflow reflection
 
 ## Practicum feedback

@@ -1,42 +1,43 @@
-# Sprint 1: Basic CSV Inspection
+# Sprint 2: Preview Example Rows
 
 ## Problem Statement
 
-Build a Python command-line tool to inspect CSV files.
+Extend the CSV inspection tool so users can preview example rows from a file in addition to seeing the basic summary.
 
 ## User Requirements
 
 Goals for this sprint are 3-5 concise, concrete user needs:
 
-1. The user can provide a CSV file path.
-2. The tool reports the row count.
-3. The project includes basic run instructions.
-4. The user can see the column names in the file.
-5. The tool clearly reports if the CSV file cannot be read.
+1. The user can choose how many example rows to show with a `--head N` option.
+2. The tool shows the first N data rows in a readable format.
+3. The tool keeps reporting the row count and column names from Sprint 1.
+4. The tool tells the user when fewer rows are available than requested.
+5. The preview keeps quoted values and commas inside fields readable.
 
 ## Plan
 
-Start with a minimal command-line program that accepts one CSV path, opens the file safely, and prints a small summary. Focus on reliable file loading and simple output before adding any richer analysis.
+Add a small preview feature on top of the Sprint 1 summary. The command-line interface should accept an optional row-count argument, read the CSV once, and display a short sample without changing the basic summary behavior.
 
 ## Tasks
 
-- Define the command-line interface for accepting a CSV path.
-- Read the CSV file and count its rows.
-- Display the column names when the file has a header row.
-- Handle missing files or unreadable input with a clear message.
-- Add brief run instructions to the repository documentation.
+- Add a `--head N` command-line option.
+- Reuse the existing CSV loading logic from Sprint 1.
+- Display the requested number of data rows after the basic summary.
+- Handle files with fewer rows than the requested preview size.
+- Confirm that the preview output stays readable when values contain commas or quotes.
 
 ## Out of Scope
 
-- Editing or cleaning CSV data.
-- Building a graphical interface.
-- Advanced statistics or visualizations.
-- Support for multiple file formats.
+- Editing CSV data.
+- Calculating missing-value percentages.
+- Computing numeric statistics.
+- Exporting a Markdown report.
+- Supporting non-CSV file formats.
 
 ## Definition of Done
 
-- The tool runs from the command line with a CSV file path.
-- The tool prints the row count.
-- The tool shows the column names when available.
-- The tool handles basic file-read errors cleanly.
-- The repository includes simple instructions for running the tool.
+- The tool accepts an optional `--head N` argument.
+- The tool still prints the row count and column names.
+- The tool prints a readable preview of the requested number of rows.
+- The tool handles short files cleanly.
+- The repository documentation reflects the new behavior.
