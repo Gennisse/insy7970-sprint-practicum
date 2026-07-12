@@ -16,6 +16,10 @@ GitHub repository URL:
 
 ## Sprint 1 summary
 
+- Codex prompt used before editing `sprint1.md`: `Read docs/specs/sprint1.md. Help me expand this into a complete sprint spec with plan, tasks, out of scope items, and a definition of done. Do not edit code yet.`
+- I defined the user requirements by keeping them short, concrete, and focused on what a user needs from the tool instead of how to implement it. I started with the required basics from the instructions and added a couple of nearby needs that fit a first CSV-inspection sprint, like showing column names and handling unreadable files. That kept the sprint realistic without making it too broad.
+- One thing Codex added that helped me think more clearly was the explicit error-handling requirement for unreadable CSV files, which made the sprint scope easier to test and verify.
+
 ## Sprint 2 summary
 
 ## Workflow reflection
