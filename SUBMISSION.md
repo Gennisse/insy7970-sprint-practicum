@@ -8,9 +8,7 @@ GitHub repository URL: https://github.com/Gennisse/insy7970-sprint-practicum.git
 ## Setup notes
 
 - Project folder path: `C:\Users\forte\insy7970-sprint-practicum`
-- `uv run main.py` did not work at the starting point. It failed with:
-  - `error: Failed to initialize cache at C:\Users\forte\AppData\Local\uv\cache`
-  - `Caused by: failed to open file C:\Users\forte\AppData\Local\uv\cache\sdists-v9\.git: Access is denied. (os error 5)`
+- `uv run main.py` did not work at the starting point because `uv` failed to initialize its cache at `C:\Users\forte\AppData\Local\uv\cache` and reported `Access is denied. (os error 5)` for `C:\Users\forte\AppData\Local\uv\cache\sdists-v9\.git`.
 - `uv init` created the starter scaffold files for the project, including `main.py`, `pyproject.toml`, and `README.md`.
 - `.gitignore` excludes `.venv/` and cache folders such as `__pycache__/`, `.pytest_cache/`, and `.ruff_cache/`.
 
