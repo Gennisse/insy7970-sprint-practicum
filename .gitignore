@@ -8,6 +8,9 @@ wheels/
 .pytest_cache/
 .ruff_cache/
 .DS_Store
+data/
+.env
+.uv-cache/
 
 # Virtual environments
 .venv/
