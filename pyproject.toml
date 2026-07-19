@@ -1,7 +1,7 @@
 [project]
-name = "movielens-tmdb-starter"
+name = "insy7970-sprint-practicum"
 version = "0.1.0"
-description = "MovieLens metadata enricher using TMDb"
+description = "Add your description here"
 readme = "README.md"
 requires-python = ">=3.11"
 dependencies = []
