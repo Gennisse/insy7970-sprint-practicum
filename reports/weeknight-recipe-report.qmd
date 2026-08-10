@@ -1,0 +1,97 @@
+---
+title: "Can a 30-minute dinner still stay under 600 calories?"
+subtitle: "A reproducible Weeknight Recipe Scout comparison"
+author: "Gennisse"
+date: today
+format:
+  pdf:
+    toc: false
+    number-sections: true
+    geometry:
+      - margin=1in
+jupyter: python3
+execute:
+  echo: false
+  warning: false
+---
+
+## Summary
+
+This report asks a decision-sized question for a busy home cook: among the recorded chicken search results, which recipes can be prepared in no more than 30 minutes while staying at or below 600 calories? The report validates and ranks the evidence with the same project functions used by the CLI and dashboard.
+
+```{python}
+from datetime import date
+import json
+from pathlib import Path
+import sys
+
+import matplotlib.pyplot as plt
+
+project_root = Path.cwd()
+if not (project_root / "main.py").exists():
+    project_root = project_root.parent
+sys.path.insert(0, str(project_root))
+
+from main import summarize_payload, validate_recipe_payload
+
+input_path = project_root / "tests" / "fixtures" / "recipe_response_success.json"
+payload = json.loads(input_path.read_text(encoding="utf-8"))
+response = validate_recipe_payload(payload)
+query = {"search": "chicken", "ingredients": "", "page": 1, "per_page": 2}
+summary = summarize_payload(response, query, max_prep=30, max_calories=600)
+recipes = summary["recipes"]
+matches = summary["recommendations"]
+top_name = matches[0]["name"] if matches else "no recipe"
+top_minutes = matches[0]["prep_time_minutes"] if matches else "not available"
+top_calories = matches[0]["calories"] if matches else "not available"
+```
+
+The recorded page contains `{python} len(recipes)` recipes. `{python} len(matches)` meets both limits: `{python} top_name`. The qualifying option takes `{python} top_minutes` minutes and contains `{python} top_calories` calories.
+
+## Evidence
+
+```{python}
+#| output: asis
+print("| Recipe | Cuisine | Prep (minutes) | Calories | Meets both limits? |")
+print("|---|---|---:|---:|---|")
+matched_names = {recipe["name"] for recipe in matches}
+for recipe in recipes:
+    print(f"| {recipe['name']} | {recipe['cuisine']} | {recipe['prep_time_minutes']} | {recipe['calories']} | {'Yes' if recipe['name'] in matched_names else 'No'} |")
+```
+
+```{python}
+#| label: fig-recipe-comparison
+#| fig-cap: "Recorded chicken recipes compared with the 30-minute limit; bar labels show calories."
+#| fig-pos: H
+names = [recipe["name"] for recipe in recipes]
+prep = [recipe["prep_time_minutes"] for recipe in recipes]
+colors = ["#2a9d8f" if name in matched_names else "#e76f51" for name in names]
+fig, ax = plt.subplots(figsize=(7, 2.4))
+bars = ax.barh(names, prep, color=colors)
+ax.axvline(30, color="#264653", linestyle="--", linewidth=1.5, label="30-minute limit")
+for bar, recipe in zip(bars, recipes):
+    ax.text(bar.get_width() + 0.7, bar.get_y() + bar.get_height()/2, f"{recipe['calories']} cal", va="center", fontsize=9)
+ax.set_xlabel("Preparation time (minutes)")
+ax.set_xlim(0, max(prep) + 13)
+ax.legend(loc="lower right")
+ax.spines[["top", "right"]].set_visible(False)
+plt.tight_layout()
+```
+
+## Interpretation
+
+Chicken Pasta is the stronger fit for this particular weeknight because it clears both thresholds. Chicken Soup has fewer calories, but its 35-minute preparation time exceeds the available window. The ranking does not claim universal health or taste quality; it answers only the stated time-and-calorie decision. A recipe with missing prep time or calories would be retained in the full results but excluded from the recommendation rather than treated as eligible.
+
+## Reproducibility and provenance
+
+- **Data source:** committed provider-shaped Recipe API fixture in `tests/fixtures/`, file `recipe_response_success.json`. It contains no credential; the report makes no network request.
+- **Recorded request parameters:** search `chicken`, no ingredient filter, page 1, two recipes per page; provider metadata reports English and six total results across three pages.
+- **Analysis filters:** prep time at most 30 minutes; calories at most 600 kilocalories per recipe as reported by the provider.
+- **Transformations:** the project's validation function checks the input; its summary function normalizes and ranks matches. Ranking is shortest prep time, then lowest calories, then name.
+- **Report render date:** `{python} date.today().isoformat()`.
+
+Rebuild from the repository root after `uv sync`:
+
+```text
+uv run quarto render reports/weeknight-recipe-report.qmd --to pdf
+```

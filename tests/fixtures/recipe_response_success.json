@@ -1,0 +1,8 @@
+{
+  "data": [
+    {"id": 101, "name": "Chicken Pasta", "description": "A simple pasta dish.", "cuisine": "Italian", "difficulty": "easy", "meal_type": "dinner", "prep_time_minutes": 25, "calories": 520, "ingredients": ["chicken", "pasta", "tomato", "garlic"], "instructions": ["Cook pasta", "Mix sauce"]},
+    {"id": 102, "name": "Chicken Soup", "description": "A warm soup.", "cuisine": "American", "difficulty": "easy", "meal_type": "lunch", "prep_time_minutes": 35, "calories": 320, "ingredients": ["chicken", "carrot", "celery"], "instructions": ["Simmer broth"]}
+  ],
+  "links": {"first": "https://recipeapi.io/api/v1/recipes?page=1", "last": "https://recipeapi.io/api/v1/recipes?page=3", "prev": null, "next": "https://recipeapi.io/api/v1/recipes?page=2"},
+  "meta": {"current_page": 1, "last_page": 3, "per_page": 2, "total": 6, "path": "https://recipeapi.io/api/v1/recipes", "language": "en"}
+}

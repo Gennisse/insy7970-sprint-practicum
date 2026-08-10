@@ -1,7 +1,16 @@
 [project]
-name = "insy7970-sprint-practicum"
-version = "0.1.0"
-description = "Add your description here"
+name = "weeknight-recipe-scout"
+version = "0.2.0"
+description = "Recipe comparison and recommendations for busy weeknight cooks"
 readme = "README.md"
 requires-python = ">=3.11"
-dependencies = []
+dependencies = [
+    "jupyter>=1.1.0",
+    "matplotlib>=3.9.0",
+    "pydantic>=2.8.0",
+    "pytest>=8.0.0",
+    "streamlit>=1.37.0",
+]
+
+[tool.pytest.ini_options]
+testpaths = ["tests"]
