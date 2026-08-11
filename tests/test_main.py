@@ -4,11 +4,14 @@ from __future__ import annotations
 
 import json
 from pathlib import Path
+from types import SimpleNamespace
+from typing import Sequence
 
 import pytest
 from pydantic import ValidationError
 
 import main
+from scripts import render_report
 
 FIXTURE = Path(__file__).parent / "fixtures" / "recipe_response_success.json"
 
@@ -62,3 +65,36 @@ def test_data_dictionary_covers_processed_fields() -> None:
     dictionary = Path("docs/data-dictionary.md").read_text(encoding="utf-8")
     for field in ["query", "recommendation_limits", "counts", "recommendations", "recipes", "links", "meta"]:
         assert f"`{field}`" in dictionary
+
+
+def test_report_wrapper_pins_quarto_to_active_python(
+    monkeypatch: pytest.MonkeyPatch,
+) -> None:
+    """The documented build cannot silently select a system Python kernel."""
+    observed: dict[str, object] = {}
+
+    def fake_run(
+        command: Sequence[str],
+        *,
+        cwd: Path,
+        env: dict[str, str],
+        check: bool,
+    ) -> SimpleNamespace:
+        observed.update(command=command, cwd=cwd, env=env, check=check)
+        return type("Completed", (), {"returncode": 0})()
+
+    monkeypatch.setattr(render_report.subprocess, "run", fake_run)
+
+    result = render_report.render_report({"QUARTO_BIN": "quarto-test"})
+
+    assert result == 0
+    assert observed["command"] == [
+        "quarto-test",
+        "render",
+        str(render_report.REPORT_SOURCE),
+        "--to",
+        "pdf",
+    ]
+    assert observed["cwd"] == render_report.PROJECT_ROOT
+    assert observed["env"]["QUARTO_PYTHON"] == render_report.sys.executable
+    assert observed["check"] is False

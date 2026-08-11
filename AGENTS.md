@@ -10,7 +10,7 @@ Weeknight Recipe Scout fetches Recipe API results and recommends practical optio
 - Run all tests with `uv run pytest`.
 - Inspect CLI behavior with `uv run main.py --help`.
 - Start the dashboard with `uv run streamlit run streamlit_app.py`.
-- Rebuild the report with `uv run quarto render reports/weeknight-recipe-report.qmd --to pdf` after Quarto and TinyTeX are installed.
+- Rebuild the report with `uv run python scripts/render_report.py` after Quarto and TinyTeX are installed. The wrapper pins Quarto to the active `uv` interpreter.
 - Tests and the report must run without a live API key or network request.
 
 ## Navigation

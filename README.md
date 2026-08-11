@@ -54,10 +54,10 @@ Tests use the committed provider-shaped fixture and never contact Recipe API.
 The authoritative source is [`reports/weeknight-recipe-report.qmd`](reports/weeknight-recipe-report.qmd), and the inspected output is [`reports/weeknight-recipe-report.pdf`](reports/weeknight-recipe-report.pdf). After `uv sync`, install [Quarto](https://quarto.org/docs/get-started/) and TinyTeX once, then rebuild with:
 
 ```powershell
-uv run quarto render reports/weeknight-recipe-report.qmd --to pdf
+uv run python scripts/render_report.py
 ```
 
-The report uses the committed fixture at `tests/fixtures/recipe_response_success.json`, calls the same validation and recommendation functions as the application, and requires no API key.
+The wrapper sets Quarto's `QUARTO_PYTHON` to the interpreter restored by `uv sync`, preventing Quarto from selecting an unrelated system Jupyter kernel. The report uses the committed fixture at `tests/fixtures/recipe_response_success.json`, calls the same validation and recommendation functions as the application, and requires no API key. If Quarto is not on `PATH`, set `QUARTO_BIN` to its executable path before running the wrapper.
 
 ## Inputs and outputs
 

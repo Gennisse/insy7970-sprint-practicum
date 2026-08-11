@@ -9,7 +9,6 @@ format:
     number-sections: true
     geometry:
       - margin=1in
-jupyter: python3
 execute:
   echo: false
   warning: false
@@ -93,5 +92,5 @@ Chicken Pasta is the stronger fit for this particular weeknight because it clear
 Rebuild from the repository root after `uv sync`:
 
 ```text
-uv run quarto render reports/weeknight-recipe-report.qmd --to pdf
+uv run python scripts/render_report.py
 ```
