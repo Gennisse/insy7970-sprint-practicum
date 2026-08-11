@@ -6,8 +6,8 @@ import os
 import shutil
 import subprocess
 import sys
+from collections.abc import Mapping, Sequence
 from pathlib import Path
-from typing import Mapping, Sequence
 
 PROJECT_ROOT = Path(__file__).resolve().parents[1]
 REPORT_SOURCE = PROJECT_ROOT / "reports" / "weeknight-recipe-report.qmd"

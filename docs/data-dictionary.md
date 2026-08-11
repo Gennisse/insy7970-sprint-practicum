@@ -46,3 +46,21 @@ The same fields occur in `recipes` and `recommendations`; the latter also contai
 ## Provenance and files
 
 The matching file in `data/raw/` preserves the provider response text before validation or transformation. Both filenames share a search/page/UTC timestamp stem. The processed file deliberately excludes credentials and acquisition headers. The reproducible report uses the committed provider-shaped test fixture named in the report, rather than a live request, so anyone can rebuild it without a secret.
+
+## SQLite recommendation history
+
+Successful CLI and dashboard runs add one row to `data/weeknight-recipe-scout.sqlite3` by default. The database never stores the API key or raw response.
+
+| Field | SQLite type | Meaning / missing rule |
+|---|---|---|
+| `id` | INTEGER | Auto-incrementing local run identifier |
+| `recorded_at` | TEXT | UTC-aware ISO 8601 timestamp |
+| `search` | TEXT | Search term used for the run |
+| `max_prep_minutes` | INTEGER | Preparation-time ceiling in minutes |
+| `max_calories` | INTEGER | Calorie ceiling in kilocalories |
+| `recipes_returned` | INTEGER | Recipes returned on the page |
+| `recommendations` | INTEGER | Recipes meeting both limits |
+| `top_name` | TEXT or NULL | First ranked recommendation; null when none qualifies |
+| `top_prep_minutes` | INTEGER or NULL | Provider prep minutes for the top pick |
+| `top_calories` | INTEGER or NULL | Provider calories for the top pick |
+| `processed_path` | TEXT | Processed JSON supporting the history row |

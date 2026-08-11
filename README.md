@@ -5,15 +5,15 @@ Weeknight Recipe Scout helps busy home cooks compare Recipe API results against 
 ## Fastest path to a result
 
 1. Install [uv](https://docs.astral.sh/uv/) and Python 3.11 or newer.
-2. Run `uv sync`.
+2. Run `uv sync --locked`.
 3. Copy `.env.example` to `.env` and replace the placeholder value for `RECIPE_API_KEY` with your own Recipe API key.
 4. Run:
 
    ```powershell
-   uv run main.py --search chicken --max-prep 30 --max-calories 650
+   uv run weeknight-recipe-scout --search chicken --max-prep 30 --max-calories 650
    ```
 
-The command prints the top qualifying recipe and writes a timestamped raw response under `data/raw/` plus a processed comparison under `data/processed/`.
+The command prints the top qualifying recipe, writes a timestamped raw response under `data/raw/`, writes a processed comparison under `data/processed/`, and records the decision in `data/weeknight-recipe-scout.sqlite3`.
 
 ## Dashboard
 
@@ -24,6 +24,8 @@ uv run streamlit run streamlit_app.py
 ```
 
 Set the meal idea, desired ingredients, maximum prep time, and maximum calories in the sidebar. The table ranks qualifying recipes by shortest prep time and then lowest calories. Recipes missing either measurement stay in the saved results but are not recommended.
+
+The dashboard also shows the five most recent searches and top picks from SQLite, giving a busy cook a useful memory across sessions.
 
 ## Configuration
 
@@ -38,8 +40,9 @@ Set the meal idea, desired ingredients, maximum prep time, and maximum calories 
 | `MAX_CALORIES` | Recommendation calorie ceiling | `650` |
 | `LOG_LEVEL` | `DEBUG`, `INFO`, `WARNING`, `ERROR`, or `CRITICAL` | `INFO` |
 | `LOG_FILE` | File-log path; an empty value disables it | `logs/weeknight-recipe-scout.log` |
+| `RECIPE_HISTORY_DB` | SQLite file used for recommendation history | `data/weeknight-recipe-scout.sqlite3` |
 
-CLI flags override these defaults for the current run. See every option with `uv run main.py --help`. Never commit `.env` or a real API key.
+CLI flags override these defaults for the current run. See every option with `uv run weeknight-recipe-scout --help`. Use `--no-history` for an unrecorded request or `--show-history` to inspect saved picks without calling the API. Never commit `.env` or a real API key.
 
 ## Tests
 
@@ -48,6 +51,37 @@ uv run pytest
 ```
 
 Tests use the committed provider-shaped fixture and never contact Recipe API.
+
+Run the complete local release check in Git Bash or another Bash terminal:
+
+```bash
+bash scripts/check.sh
+```
+
+On Windows PowerShell, run the equivalent contract:
+
+```powershell
+.\scripts\check.ps1
+```
+
+GitHub Actions runs the same formatting, lint, test, and build contract after every push and pull request.
+
+## Build and install the package
+
+Build the exact version declared in `pyproject.toml`:
+
+```powershell
+uv build --no-sources
+```
+
+This creates a wheel and source archive under `dist/`. Install the wheel as a command-line tool:
+
+```powershell
+uv tool install dist/weeknight_recipe_scout-1.0.0-py3-none-any.whl
+weeknight-recipe-scout --help
+```
+
+The submitted wheel and source archive are attached to the versioned GitHub Release linked from the final reflection.
 
 ## Reproducible report
 
@@ -64,6 +98,7 @@ The wrapper sets Quarto's `QUARTO_PYTHON` to the interpreter restored by `uv syn
 - Input: Recipe API JSON from `GET /api/v1/recipes`, filtered by search, ingredients, page, and page size.
 - Raw output: exact provider response at `data/raw/<search>-page<page>-<UTC timestamp>.raw.json`.
 - Processed output: normalized recipes, limits, counts, and ranked matches at `data/processed/<search>-page<page>-<UTC timestamp>.processed.json`.
+- History output: one SQLite row per recorded decision, including limits, counts, top pick, and processed-file provenance.
 - Runtime evidence: terminal messages and an optional file under `logs/`.
 
 The [data dictionary](docs/data-dictionary.md) defines every stable processed field, provenance, units, missing-value rules, and transformations.
@@ -76,10 +111,12 @@ The [data dictionary](docs/data-dictionary.md) defines every stable processed fi
 - Unexpected data: the provider response no longer matches the validated schema; retain the error and inspect the raw provider behavior before changing models.
 - No qualifying recipes: broaden the search or increase a limit. Missing prep time or calories intentionally prevents a recommendation.
 - PDF render fails: run `quarto check`; confirm Quarto, TinyTeX, and the `uv` environment are installed.
+- SQLite write fails: confirm the parent directory is writable or pass `--database` with another local path.
 
 ## Project guide
 
 - [`docs/data-dictionary.md`](docs/data-dictionary.md): processed JSON contract.
+- [`history.py`](history.py): SQLite persistence and recent-run queries.
 - [`reports/weeknight-recipe-report.qmd`](reports/weeknight-recipe-report.qmd): authoritative report source.
 - [`AGENTS.md`](AGENTS.md): durable setup, navigation, and source-of-truth guidance.
 - [`LICENSE`](LICENSE): MIT license.

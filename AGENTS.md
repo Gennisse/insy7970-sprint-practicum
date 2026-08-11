@@ -6,9 +6,10 @@ Weeknight Recipe Scout fetches Recipe API results and recommends practical optio
 
 ## Setup and checks
 
-- Restore the exact Python environment with `uv sync`.
+- Restore the exact Python environment with `uv sync --locked`.
 - Run all tests with `uv run pytest`.
-- Inspect CLI behavior with `uv run main.py --help`.
+- Run the release contract with `bash scripts/check.sh`, or `.\scripts\check.ps1` on Windows PowerShell.
+- Inspect CLI behavior with `uv run weeknight-recipe-scout --help`.
 - Start the dashboard with `uv run streamlit run streamlit_app.py`.
 - Rebuild the report with `uv run python scripts/render_report.py` after Quarto and TinyTeX are installed. The wrapper pins Quarto to the active `uv` interpreter.
 - Tests and the report must run without a live API key or network request.
@@ -16,6 +17,7 @@ Weeknight Recipe Scout fetches Recipe API results and recommends practical optio
 ## Navigation
 
 - `main.py`: provider models, fetching, normalization, recommendations, persistence, CLI, and reusable report logic.
+- `history.py`: SQLite schema and durable recommendation-history operations.
 - `streamlit_app.py`: user-facing interactive dashboard; keep business rules in `main.py`.
 - `tests/`: behavioral tests and provider-shaped fixture.
 - `docs/data-dictionary.md`: stable processed-output contract.
@@ -26,6 +28,7 @@ Weeknight Recipe Scout fetches Recipe API results and recommends practical optio
 
 - Python 3.11+, type hints on every function, concise module/class/function docstrings.
 - `main.py` is the source of truth for validation, normalization, filtering, and ranking. The dashboard and report call it instead of reimplementing rules.
+- `history.py` is the source of truth for the SQLite schema and history queries.
 - Tests define expected behavior. Update tests, CLI help, dashboard copy, README, and data dictionary when behavior changes.
 - The `.qmd` is the report source. Never edit the PDF by hand; revise source, code, or input and render again.
 - Preserve raw API text before transformation. Never write the bearer token to source, data, logs, report metadata, or errors.

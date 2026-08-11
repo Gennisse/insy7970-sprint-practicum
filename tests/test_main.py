@@ -3,14 +3,15 @@
 from __future__ import annotations
 
 import json
+from collections.abc import Sequence
 from pathlib import Path
 from types import SimpleNamespace
-from typing import Sequence
 
 import pytest
 from pydantic import ValidationError
 
 import main
+from history import list_recent_runs, record_run
 from scripts import render_report
 
 FIXTURE = Path(__file__).parent / "fixtures" / "recipe_response_success.json"
@@ -24,7 +25,9 @@ def load_fixture() -> dict[str, object]:
 def test_build_recipe_url_and_bounds() -> None:
     """URL encoding preserves all supported provider query parameters."""
     url = main.build_recipe_url("chicken", "tomato,basil", 2, 7)
-    assert "ingredients=tomato%2Cbasil" in url and "page=2" in url and "per_page=7" in url
+    assert (
+        "ingredients=tomato%2Cbasil" in url and "page=2" in url and "per_page=7" in url
+    )
     with pytest.raises(ValueError, match="between 1 and 50"):
         main.build_recipe_url("chicken", "", 1, 51)
 
@@ -32,7 +35,12 @@ def test_build_recipe_url_and_bounds() -> None:
 def test_summarize_ranks_weeknight_matches() -> None:
     """Only recipes within both limits appear, ordered by prep time."""
     response = main.validate_recipe_payload(load_fixture())
-    summary = main.summarize_payload(response, {"search": "chicken", "ingredients": "", "page": 1, "per_page": 2}, max_prep=30, max_calories=600)
+    summary = main.summarize_payload(
+        response,
+        {"search": "chicken", "ingredients": "", "page": 1, "per_page": 2},
+        max_prep=30,
+        max_calories=600,
+    )
     assert summary["counts"]["recipes_returned"] == 2
     assert summary["counts"]["recommendations"] == 1
     assert summary["recommendations"][0]["name"] == "Chicken Pasta"
@@ -41,8 +49,13 @@ def test_summarize_ranks_weeknight_matches() -> None:
 
 def test_recommendations_exclude_missing_measurements() -> None:
     """Unknown prep time or calories never become an unearned recommendation."""
-    recipes = [{"name": "Unknown", "prep_time_minutes": None, "calories": 200}, {"name": "Fast", "prep_time_minutes": 10, "calories": 300}]
-    assert [item["name"] for item in main.recommend_recipes(recipes, 30, 600)] == ["Fast"]
+    recipes = [
+        {"name": "Unknown", "prep_time_minutes": None, "calories": 200},
+        {"name": "Fast", "prep_time_minutes": 10, "calories": 300},
+    ]
+    assert [item["name"] for item in main.recommend_recipes(recipes, 30, 600)] == [
+        "Fast"
+    ]
 
 
 def test_validation_rejects_missing_data() -> None:
@@ -63,7 +76,15 @@ def test_cli_help_names_the_user_filters(capsys: pytest.CaptureFixture[str]) -> 
 def test_data_dictionary_covers_processed_fields() -> None:
     """Every stable top-level processed field is named in the data dictionary."""
     dictionary = Path("docs/data-dictionary.md").read_text(encoding="utf-8")
-    for field in ["query", "recommendation_limits", "counts", "recommendations", "recipes", "links", "meta"]:
+    for field in [
+        "query",
+        "recommendation_limits",
+        "counts",
+        "recommendations",
+        "recipes",
+        "links",
+        "meta",
+    ]:
         assert f"`{field}`" in dictionary
 
 
@@ -98,3 +119,29 @@ def test_report_wrapper_pins_quarto_to_active_python(
     assert observed["cwd"] == render_report.PROJECT_ROOT
     assert observed["env"]["QUARTO_PYTHON"] == render_report.sys.executable
     assert observed["check"] is False
+
+
+def test_sqlite_history_records_and_orders_runs(tmp_path: Path) -> None:
+    """Recommendation history persists the decision context and newest top pick."""
+    response = main.validate_recipe_payload(load_fixture())
+    summary = main.summarize_payload(
+        response,
+        {"search": "chicken", "ingredients": "", "page": 1, "per_page": 2},
+        max_prep=30,
+        max_calories=600,
+    )
+    database = tmp_path / "history.sqlite3"
+
+    history_id = record_run(database, summary, Path("processed.json"))
+    rows = list_recent_runs(database)
+
+    assert history_id == 1
+    assert rows[0]["search"] == "chicken"
+    assert rows[0]["top_name"] == "Chicken Pasta"
+    assert rows[0]["max_prep_minutes"] == 30
+
+
+def test_history_requires_positive_limit(tmp_path: Path) -> None:
+    """Invalid history limits fail before opening a database."""
+    with pytest.raises(ValueError, match="at least 1"):
+        list_recent_runs(tmp_path / "history.sqlite3", limit=0)
