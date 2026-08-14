@@ -21,6 +21,11 @@ def find_quarto(environment: Mapping[str, str] = os.environ) -> str:
         raise RuntimeError(
             "Quarto was not found. Install Quarto and confirm `quarto --version` works."
         )
+    executable_path = Path(executable)
+    if executable_path.suffix.lower() == ".cmd":
+        native_launcher = executable_path.with_suffix(".exe")
+        if native_launcher.exists():
+            return str(native_launcher)
     return executable
 
 

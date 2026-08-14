@@ -1,0 +1,866 @@
+{
+  "counts": {
+    "current_page": 1,
+    "last_page": 5,
+    "per_page": 10,
+    "recipes_returned": 10,
+    "recommendations": 10,
+    "total": 48
+  },
+  "links": {
+    "first": "https://recipeapi.io/api/v1/recipes?per_page=10&search=salmon&page=1",
+    "last": "https://recipeapi.io/api/v1/recipes?per_page=10&search=salmon&page=5",
+    "next": "https://recipeapi.io/api/v1/recipes?per_page=10&search=salmon&page=2",
+    "prev": null
+  },
+  "meta": {
+    "language": "en",
+    "path": "https://recipeapi.io/api/v1/recipes"
+  },
+  "query": {
+    "ingredients": "",
+    "page": 1,
+    "per_page": 10,
+    "search": "salmon"
+  },
+  "recipes": [
+    {
+      "calories": 350,
+      "cook_time_minutes": 15,
+      "cuisine": "turkish",
+      "description": "Baked salmon is a simple, healthy Turkish-inspired dish where salmon fillets are seasoned, topped with lemon and herbs, then baked to tender perfection.",
+      "dietary_tags": [
+        "gluten_free",
+        "dairy_free",
+        "nut_free",
+        "halal",
+        "kosher"
+      ],
+      "difficulty": "easy",
+      "id": 6940,
+      "ingredients": [
+        "Olive oil",
+        "Salt",
+        "Black pepper",
+        "Parsley",
+        "Dried oregano",
+        "Salmon fillet",
+        "Lemon"
+      ],
+      "instruction_count": 7,
+      "instructions": [
+        "Preheat the oven to 200\u00b0C (400\u00b0F).",
+        "Place the salmon fillet on a baking tray lined with parchment paper or lightly oiled.",
+        "Drizzle olive oil over the salmon and season with salt, pepper, and a pinch of dried oregano.",
+        "Slice the lemon thinly and place the slices on top of the salmon.",
+        "Sprinkle chopped fresh parsley over the salmon.",
+        "Bake in the preheated oven for 12 to 15 minutes, until the salmon is opaque and flakes easily with a fork.",
+        "Remove from the oven and let rest for a few minutes before serving."
+      ],
+      "meal_type": "main",
+      "name": "Baked Salmon",
+      "prep_time_minutes": 10,
+      "protein_grams": 34,
+      "servings": 2,
+      "total_time_minutes": 25
+    },
+    {
+      "calories": 350,
+      "cook_time_minutes": 15,
+      "cuisine": "american",
+      "description": "A simple and healthy baked salmon dish flavored with fresh dill and optionally lemon, perfect for a quick nutritious meal.",
+      "dietary_tags": [
+        "dairy_free",
+        "gluten_free",
+        "nut_free"
+      ],
+      "difficulty": "easy",
+      "id": 317,
+      "ingredients": [
+        "Olive oil",
+        "Salt",
+        "Black pepper",
+        "Salmon fillet",
+        "Dill",
+        "Lemon"
+      ],
+      "instruction_count": 9,
+      "instructions": [
+        "Preheat the oven to 200 degrees Celsius (400 degrees Fahrenheit).",
+        "Place the salmon fillets on a baking dish lined with parchment paper or lightly greased.",
+        "Season the salmon with salt and pepper to taste.",
+        "Sprinkle chopped fresh dill evenly over the salmon fillets.",
+        "Drizzle olive oil over the fillets to keep them moist during baking.",
+        "Optionally, add thin lemon slices on top of each fillet for extra flavor.",
+        "Bake in the preheated oven for 12-15 minutes, or until the salmon is cooked through and flakes easily with a fork.",
+        "Remove from oven and let rest for a couple of minutes before serving.",
+        "Serve the baked salmon garnished with extra fresh dill if desired."
+      ],
+      "meal_type": "main",
+      "name": "Baked Salmon with Dill",
+      "prep_time_minutes": 10,
+      "protein_grams": 34,
+      "servings": 4,
+      "total_time_minutes": 25
+    },
+    {
+      "calories": 350,
+      "cook_time_minutes": 30,
+      "cuisine": "american",
+      "description": "Cedar plank smoked salmon is a flavorful dish where salmon is cooked on a soaked cedar plank, imparting a subtle smoky aroma with moist and tender results.",
+      "dietary_tags": [
+        "dairy_free",
+        "gluten_free",
+        "nut_free"
+      ],
+      "difficulty": "medium",
+      "id": 95,
+      "ingredients": [
+        "Olive oil",
+        "Salt",
+        "Black pepper",
+        "Parsley",
+        "Salmon fillet",
+        "Cedar plank",
+        "Dill",
+        "Lemon"
+      ],
+      "instruction_count": 9,
+      "instructions": [
+        "Soak a cedar plank in water for at least 1 hour to prevent it from burning during cooking.",
+        "Preheat the grill to medium heat, around 350\u00b0F (175\u00b0C).",
+        "Place the salmon fillet skin-side down on the soaked cedar plank.",
+        "Brush the salmon with olive oil to keep it moist during smoking.",
+        "Season the salmon with salt, pepper, and your choice of herbs such as dill and parsley.",
+        "Place the cedar plank with salmon directly on the grill grates.",
+        "Cover the grill and smoke the salmon for approximately 20-30 minutes until cooked through and flaky.",
+        "Remove the cedar plank from the grill carefully and let the salmon rest for a few minutes before serving.",
+        "Serve the smoked salmon with lemon wedges and garnish with additional fresh herbs if desired."
+      ],
+      "meal_type": "main",
+      "name": "Cedar Plank Smoked Salmon",
+      "prep_time_minutes": 15,
+      "protein_grams": 35,
+      "servings": 4,
+      "total_time_minutes": 45
+    },
+    {
+      "calories": 420,
+      "cook_time_minutes": 15,
+      "cuisine": "thai",
+      "description": "Choo Chee Curry with Salmon is a rich and aromatic Thai red curry featuring creamy coconut milk and tender salmon, flavored with fragrant kaffir lime leaves and Thai basil.",
+      "dietary_tags": [
+        "gluten_free",
+        "dairy_free",
+        "nut_free",
+        "halal",
+        "kosher"
+      ],
+      "difficulty": "medium",
+      "id": 2281,
+      "ingredients": [
+        "Vegetable oil",
+        "Coconut milk",
+        "Salmon",
+        "Fish sauce",
+        "Kaffir lime leaf",
+        "Palm sugar",
+        "Thai basil",
+        "Choo chee curry paste"
+      ],
+      "instruction_count": 8,
+      "instructions": [
+        "Cut the salmon into bite-sized pieces and set aside.",
+        "Heat the vegetable oil in a wok or large skillet over medium heat.",
+        "Add the choo chee curry paste and stir-fry for about 1-2 minutes until fragrant.",
+        "Pour in the coconut milk and bring to a gentle simmer while stirring.",
+        "Add the fish sauce and palm sugar to the sauce and stir until the sugar dissolves.",
+        "Add the salmon pieces to the curry sauce and cook gently for 5-6 minutes until the salmon is just cooked through.",
+        "Add the kaffir lime leaves torn into pieces and stir to combine, then remove from heat.",
+        "Serve the choo chee salmon curry hot, garnished with Thai basil leaves and accompanied by steamed jasmine rice."
+      ],
+      "meal_type": "main",
+      "name": "Choo Chee Curry with Salmon",
+      "prep_time_minutes": 10,
+      "protein_grams": 30,
+      "servings": 4,
+      "total_time_minutes": 25
+    },
+    {
+      "calories": 450,
+      "cook_time_minutes": 10,
+      "cuisine": "american",
+      "description": "Eggs Benedict with smoked salmon is a classic brunch dish featuring toasted english muffins topped with cream cheese, smoked salmon, perfectly poached eggs, and rich hollandaise sauce.",
+      "dietary_tags": [
+        "nut_free"
+      ],
+      "difficulty": "medium",
+      "id": 698,
+      "ingredients": [
+        "Salt",
+        "Black pepper",
+        "Butter",
+        "Egg",
+        "Lemon juice",
+        "Cream cheese",
+        "Chive",
+        "Vinegar",
+        "Smoked salmon",
+        "Egg yolk"
+      ],
+      "instruction_count": 10,
+      "instructions": [
+        "Bring a large pot of water to a gentle simmer and add a tablespoon of vinegar.",
+        "Crack each egg into a small bowl, then gently slide each egg into the simmering water to poach for about 3-4 minutes until whites are set and yolks are soft.",
+        "Meanwhile, toast the english muffin halves until golden brown and set them on plates.",
+        "Spread a thin layer of cream cheese on each toasted muffin half.",
+        "Place smoked salmon slices evenly on top of the cream cheese on each muffin half.",
+        "Using a slotted spoon, remove the poached eggs from the water, letting excess water drain off, then carefully place one egg on top of the salmon on each muffin.",
+        "Prepare hollandaise sauce by whisking egg yolks, lemon juice, and melted butter over low heat until thickened, seasoning with salt and pepper.",
+        "Spoon warm hollandaise sauce generously over each poached egg.",
+        "Garnish with chopped fresh chives and a pinch of black pepper if desired.",
+        "Serve immediately while warm."
+      ],
+      "meal_type": "breakfast",
+      "name": "Eggs Benedict Smoked Salmon",
+      "prep_time_minutes": 15,
+      "protein_grams": 25,
+      "servings": 2,
+      "total_time_minutes": 25
+    },
+    {
+      "calories": 520,
+      "cook_time_minutes": 15,
+      "cuisine": "italian",
+      "description": "Farfalle with Salmon is a simple and elegant Italian pasta dish featuring bowtie-shaped pasta tossed with tender salmon pieces in a creamy lemon-dill sauce.",
+      "dietary_tags": [
+        "gluten_free",
+        "nut_free",
+        "halal",
+        "kosher"
+      ],
+      "difficulty": "easy",
+      "id": 3279,
+      "ingredients": [
+        "Olive oil",
+        "Salt",
+        "Black pepper",
+        "Garlic",
+        "Lemon juice",
+        "Dill",
+        "Heavy cream",
+        "Lemon zest",
+        "Salmon",
+        "Farfalle pasta"
+      ],
+      "instruction_count": 10,
+      "instructions": [
+        "Bring a large pot of salted water to a boil, then add the farfalle pasta and cook according to package instructions until al dente.",
+        "While the pasta cooks, heat olive oil in a large skillet over medium heat.",
+        "Add chopped garlic to the skillet and saut\u00e9 until fragrant, about 1 minute.",
+        "Cut the salmon into bite-sized pieces and add to the skillet, cooking gently until the salmon is opaque and cooked through, about 4-5 minutes.",
+        "Add heavy cream and lemon juice to the skillet, stirring to combine and simmering for 2-3 minutes until the sauce slightly thickens.",
+        "Drain the cooked pasta, reserving a small amount of pasta water.",
+        "Add the pasta to the skillet with the salmon sauce, tossing to coat.",
+        "If the sauce is too thick, add a little reserved pasta water to loosen it.",
+        "Season with salt, pepper, and chopped dill, mixing well.",
+        "Serve the pasta garnished with extra dill and lemon zest if desired."
+      ],
+      "meal_type": "main",
+      "name": "Farfalle with Salmon",
+      "prep_time_minutes": 10,
+      "protein_grams": 35,
+      "servings": 2,
+      "total_time_minutes": 25
+    },
+    {
+      "calories": 220,
+      "cook_time_minutes": 2880,
+      "cuisine": "french",
+      "description": "Gravlax is a Nordic dish of raw salmon cured with a mixture of salt, sugar, and dill, resulting in a flavorful and delicate appetizer.",
+      "dietary_tags": [
+        "dairy_free",
+        "gluten_free",
+        "nut_free"
+      ],
+      "difficulty": "medium",
+      "id": 1250,
+      "ingredients": [
+        "Salt",
+        "Sugar",
+        "Salmon fillet",
+        "Dill",
+        "White pepper"
+      ],
+      "instruction_count": 10,
+      "instructions": [
+        "In a bowl, mix sugar, salt, crushed white pepper, and chopped dill together.",
+        "Lay a large piece of plastic wrap on a flat surface and spread half of the curing mixture evenly on it.",
+        "Place the salmon fillet skin-side down on the curing mixture.",
+        "Spread the remaining curing mixture evenly over the top of the salmon.",
+        "Wrap the salmon tightly with the plastic wrap, then place it in a shallow dish.",
+        "Place a weight on top of the wrapped salmon to press it down slightly.",
+        "Refrigerate the salmon for 48 hours, turning it over every 12 hours to ensure even curing.",
+        "After curing, remove the salmon from the wrap and gently rinse off the curing mixture under cold water.",
+        "Pat the salmon dry with paper towels.",
+        "Slice the gravlax thinly on a diagonal, and serve chilled with mustard sauce, rye bread, or crackers."
+      ],
+      "meal_type": "appetizer",
+      "name": "Gravlax Salmon (Cured Salmon)",
+      "prep_time_minutes": 20,
+      "protein_grams": 20,
+      "servings": 4,
+      "total_time_minutes": 2900
+    },
+    {
+      "calories": 350,
+      "cook_time_minutes": 12,
+      "cuisine": "turkish",
+      "description": "Grilled salmon is a simple and flavorful dish where fresh salmon fillets are seasoned and char-grilled to perfection, offering a smoky taste and tender texture.",
+      "dietary_tags": [
+        "gluten_free",
+        "dairy_free",
+        "nut_free",
+        "halal",
+        "kosher"
+      ],
+      "difficulty": "easy",
+      "id": 6936,
+      "ingredients": [
+        "Olive oil",
+        "Salt",
+        "Black pepper",
+        "Parsley",
+        "Salmon fillet",
+        "Lemon"
+      ],
+      "instruction_count": 7,
+      "instructions": [
+        "Preheat the grill to medium-high heat.",
+        "Brush the salmon fillets with olive oil on both sides to prevent sticking.",
+        "Season the salmon with salt and black pepper to taste.",
+        "Place the salmon fillets skin-side down on the grill.",
+        "Grill the salmon for about 4-6 minutes per side, depending on thickness, until the fish flakes easily with a fork and has grill marks.",
+        "Remove the salmon from the grill and let it rest for a couple of minutes.",
+        "Garnish with fresh lemon slices and chopped parsley before serving."
+      ],
+      "meal_type": "main",
+      "name": "Grilled Salmon",
+      "prep_time_minutes": 10,
+      "protein_grams": 40,
+      "servings": 4,
+      "total_time_minutes": 22
+    },
+    {
+      "calories": 350,
+      "cook_time_minutes": 10,
+      "cuisine": "american",
+      "description": "Grilled salmon teriyaki is a Japanese-inspired dish where salmon fillets are marinated and glazed with a sweet and savory teriyaki sauce, then perfectly grilled for a flavorful and healthy meal.",
+      "dietary_tags": [
+        "dairy_free",
+        "gluten_free"
+      ],
+      "difficulty": "easy",
+      "id": 319,
+      "ingredients": [
+        "Olive oil",
+        "Scallion",
+        "Sugar",
+        "Salmon fillet",
+        "Soy sauce",
+        "Mirin",
+        "Sake",
+        "Sesame seed",
+        "Ginger"
+      ],
+      "instruction_count": 8,
+      "instructions": [
+        "Prepare the teriyaki sauce by mixing soy sauce, mirin, sake, sugar, and grated ginger in a bowl until the sugar dissolves.",
+        "Marinate the salmon fillets in half of the teriyaki sauce for at least 30 minutes in the refrigerator.",
+        "Preheat the grill to medium-high heat and lightly oil the grill grates to prevent sticking.",
+        "Remove salmon from the marinade, letting excess drip off, and grill the fillets skin-side down first for about 4-5 minutes.",
+        "Flip the salmon carefully and grill the other side for an additional 3-4 minutes or until cooked through and slightly charred.",
+        "While grilling, heat the remaining teriyaki sauce in a small saucepan over medium heat and cook until it thickens into a glaze.",
+        "Brush the cooked salmon with the thickened teriyaki glaze and remove from the grill.",
+        "Serve the grilled salmon teriyaki garnished with chopped green onion and sesame seeds over steamed rice or your preferred side."
+      ],
+      "meal_type": "main",
+      "name": "Grilled Salmon Teriyaki",
+      "prep_time_minutes": 35,
+      "protein_grams": 35,
+      "servings": 4,
+      "total_time_minutes": 45
+    },
+    {
+      "calories": 450,
+      "cook_time_minutes": 15,
+      "cuisine": "french",
+      "description": "Grilled salmon served with classic French bearnaise sauce, a creamy and tangy herb-infused butter sauce made with egg yolks and tarragon.",
+      "dietary_tags": [
+        "gluten_free",
+        "nut_free"
+      ],
+      "difficulty": "medium",
+      "id": 1520,
+      "ingredients": [
+        "Olive oil",
+        "Salt",
+        "Black pepper",
+        "Butter",
+        "Cayenne",
+        "Salmon fillet",
+        "Shallot",
+        "White wine",
+        "Black peppercorn",
+        "Egg yolk"
+      ],
+      "instruction_count": 11,
+      "instructions": [
+        "Preheat the grill to medium-high heat and oil the grill grates to prevent sticking.",
+        "Season the salmon fillets with salt and pepper on both sides.",
+        "Place the salmon fillets on the grill, skin side down, and cook for about 4-5 minutes per side or until cooked through and slightly charred.",
+        "While the salmon is grilling, prepare the bearnaise sauce.",
+        "In a small saucepan, combine white wine vinegar, white wine, chopped shallot, dried tarragon, and peppercorns.",
+        "Simmer the mixture over medium heat until reduced by half, then strain to remove solids and let cool slightly.",
+        "Fill a double boiler or a heatproof bowl set over simmering water with the reduction and add egg yolks.",
+        "Whisk continuously until the mixture thickens and becomes pale and fluffy.",
+        "Slowly drizzle in melted butter while whisking constantly to emulsify the sauce.",
+        "Stir in chopped fresh tarragon and season with salt and a pinch of cayenne pepper.",
+        "Serve the grilled salmon topped with generous spoonfuls of bearnaise sauce and garnish with fresh tarragon if desired."
+      ],
+      "meal_type": "main",
+      "name": "Grilled Salmon with Bearnaise Sauce",
+      "prep_time_minutes": 15,
+      "protein_grams": 40,
+      "servings": 4,
+      "total_time_minutes": 30
+    }
+  ],
+  "recommendation_limits": {
+    "max_calories": 1500,
+    "max_prep_minutes": 120
+  },
+  "recommendations": [
+    {
+      "calories": 350,
+      "cook_time_minutes": 15,
+      "cuisine": "turkish",
+      "description": "Baked salmon is a simple, healthy Turkish-inspired dish where salmon fillets are seasoned, topped with lemon and herbs, then baked to tender perfection.",
+      "dietary_tags": [
+        "gluten_free",
+        "dairy_free",
+        "nut_free",
+        "halal",
+        "kosher"
+      ],
+      "difficulty": "easy",
+      "id": 6940,
+      "ingredients": [
+        "Olive oil",
+        "Salt",
+        "Black pepper",
+        "Parsley",
+        "Dried oregano",
+        "Salmon fillet",
+        "Lemon"
+      ],
+      "instruction_count": 7,
+      "instructions": [
+        "Preheat the oven to 200\u00b0C (400\u00b0F).",
+        "Place the salmon fillet on a baking tray lined with parchment paper or lightly oiled.",
+        "Drizzle olive oil over the salmon and season with salt, pepper, and a pinch of dried oregano.",
+        "Slice the lemon thinly and place the slices on top of the salmon.",
+        "Sprinkle chopped fresh parsley over the salmon.",
+        "Bake in the preheated oven for 12 to 15 minutes, until the salmon is opaque and flakes easily with a fork.",
+        "Remove from the oven and let rest for a few minutes before serving."
+      ],
+      "meal_type": "main",
+      "name": "Baked Salmon",
+      "prep_time_minutes": 10,
+      "protein_grams": 34,
+      "recommendation_rank": 1,
+      "servings": 2,
+      "total_time_minutes": 25
+    },
+    {
+      "calories": 350,
+      "cook_time_minutes": 15,
+      "cuisine": "american",
+      "description": "A simple and healthy baked salmon dish flavored with fresh dill and optionally lemon, perfect for a quick nutritious meal.",
+      "dietary_tags": [
+        "dairy_free",
+        "gluten_free",
+        "nut_free"
+      ],
+      "difficulty": "easy",
+      "id": 317,
+      "ingredients": [
+        "Olive oil",
+        "Salt",
+        "Black pepper",
+        "Salmon fillet",
+        "Dill",
+        "Lemon"
+      ],
+      "instruction_count": 9,
+      "instructions": [
+        "Preheat the oven to 200 degrees Celsius (400 degrees Fahrenheit).",
+        "Place the salmon fillets on a baking dish lined with parchment paper or lightly greased.",
+        "Season the salmon with salt and pepper to taste.",
+        "Sprinkle chopped fresh dill evenly over the salmon fillets.",
+        "Drizzle olive oil over the fillets to keep them moist during baking.",
+        "Optionally, add thin lemon slices on top of each fillet for extra flavor.",
+        "Bake in the preheated oven for 12-15 minutes, or until the salmon is cooked through and flakes easily with a fork.",
+        "Remove from oven and let rest for a couple of minutes before serving.",
+        "Serve the baked salmon garnished with extra fresh dill if desired."
+      ],
+      "meal_type": "main",
+      "name": "Baked Salmon with Dill",
+      "prep_time_minutes": 10,
+      "protein_grams": 34,
+      "recommendation_rank": 2,
+      "servings": 4,
+      "total_time_minutes": 25
+    },
+    {
+      "calories": 350,
+      "cook_time_minutes": 12,
+      "cuisine": "turkish",
+      "description": "Grilled salmon is a simple and flavorful dish where fresh salmon fillets are seasoned and char-grilled to perfection, offering a smoky taste and tender texture.",
+      "dietary_tags": [
+        "gluten_free",
+        "dairy_free",
+        "nut_free",
+        "halal",
+        "kosher"
+      ],
+      "difficulty": "easy",
+      "id": 6936,
+      "ingredients": [
+        "Olive oil",
+        "Salt",
+        "Black pepper",
+        "Parsley",
+        "Salmon fillet",
+        "Lemon"
+      ],
+      "instruction_count": 7,
+      "instructions": [
+        "Preheat the grill to medium-high heat.",
+        "Brush the salmon fillets with olive oil on both sides to prevent sticking.",
+        "Season the salmon with salt and black pepper to taste.",
+        "Place the salmon fillets skin-side down on the grill.",
+        "Grill the salmon for about 4-6 minutes per side, depending on thickness, until the fish flakes easily with a fork and has grill marks.",
+        "Remove the salmon from the grill and let it rest for a couple of minutes.",
+        "Garnish with fresh lemon slices and chopped parsley before serving."
+      ],
+      "meal_type": "main",
+      "name": "Grilled Salmon",
+      "prep_time_minutes": 10,
+      "protein_grams": 40,
+      "recommendation_rank": 3,
+      "servings": 4,
+      "total_time_minutes": 22
+    },
+    {
+      "calories": 420,
+      "cook_time_minutes": 15,
+      "cuisine": "thai",
+      "description": "Choo Chee Curry with Salmon is a rich and aromatic Thai red curry featuring creamy coconut milk and tender salmon, flavored with fragrant kaffir lime leaves and Thai basil.",
+      "dietary_tags": [
+        "gluten_free",
+        "dairy_free",
+        "nut_free",
+        "halal",
+        "kosher"
+      ],
+      "difficulty": "medium",
+      "id": 2281,
+      "ingredients": [
+        "Vegetable oil",
+        "Coconut milk",
+        "Salmon",
+        "Fish sauce",
+        "Kaffir lime leaf",
+        "Palm sugar",
+        "Thai basil",
+        "Choo chee curry paste"
+      ],
+      "instruction_count": 8,
+      "instructions": [
+        "Cut the salmon into bite-sized pieces and set aside.",
+        "Heat the vegetable oil in a wok or large skillet over medium heat.",
+        "Add the choo chee curry paste and stir-fry for about 1-2 minutes until fragrant.",
+        "Pour in the coconut milk and bring to a gentle simmer while stirring.",
+        "Add the fish sauce and palm sugar to the sauce and stir until the sugar dissolves.",
+        "Add the salmon pieces to the curry sauce and cook gently for 5-6 minutes until the salmon is just cooked through.",
+        "Add the kaffir lime leaves torn into pieces and stir to combine, then remove from heat.",
+        "Serve the choo chee salmon curry hot, garnished with Thai basil leaves and accompanied by steamed jasmine rice."
+      ],
+      "meal_type": "main",
+      "name": "Choo Chee Curry with Salmon",
+      "prep_time_minutes": 10,
+      "protein_grams": 30,
+      "recommendation_rank": 4,
+      "servings": 4,
+      "total_time_minutes": 25
+    },
+    {
+      "calories": 520,
+      "cook_time_minutes": 15,
+      "cuisine": "italian",
+      "description": "Farfalle with Salmon is a simple and elegant Italian pasta dish featuring bowtie-shaped pasta tossed with tender salmon pieces in a creamy lemon-dill sauce.",
+      "dietary_tags": [
+        "gluten_free",
+        "nut_free",
+        "halal",
+        "kosher"
+      ],
+      "difficulty": "easy",
+      "id": 3279,
+      "ingredients": [
+        "Olive oil",
+        "Salt",
+        "Black pepper",
+        "Garlic",
+        "Lemon juice",
+        "Dill",
+        "Heavy cream",
+        "Lemon zest",
+        "Salmon",
+        "Farfalle pasta"
+      ],
+      "instruction_count": 10,
+      "instructions": [
+        "Bring a large pot of salted water to a boil, then add the farfalle pasta and cook according to package instructions until al dente.",
+        "While the pasta cooks, heat olive oil in a large skillet over medium heat.",
+        "Add chopped garlic to the skillet and saut\u00e9 until fragrant, about 1 minute.",
+        "Cut the salmon into bite-sized pieces and add to the skillet, cooking gently until the salmon is opaque and cooked through, about 4-5 minutes.",
+        "Add heavy cream and lemon juice to the skillet, stirring to combine and simmering for 2-3 minutes until the sauce slightly thickens.",
+        "Drain the cooked pasta, reserving a small amount of pasta water.",
+        "Add the pasta to the skillet with the salmon sauce, tossing to coat.",
+        "If the sauce is too thick, add a little reserved pasta water to loosen it.",
+        "Season with salt, pepper, and chopped dill, mixing well.",
+        "Serve the pasta garnished with extra dill and lemon zest if desired."
+      ],
+      "meal_type": "main",
+      "name": "Farfalle with Salmon",
+      "prep_time_minutes": 10,
+      "protein_grams": 35,
+      "recommendation_rank": 5,
+      "servings": 2,
+      "total_time_minutes": 25
+    },
+    {
+      "calories": 350,
+      "cook_time_minutes": 30,
+      "cuisine": "american",
+      "description": "Cedar plank smoked salmon is a flavorful dish where salmon is cooked on a soaked cedar plank, imparting a subtle smoky aroma with moist and tender results.",
+      "dietary_tags": [
+        "dairy_free",
+        "gluten_free",
+        "nut_free"
+      ],
+      "difficulty": "medium",
+      "id": 95,
+      "ingredients": [
+        "Olive oil",
+        "Salt",
+        "Black pepper",
+        "Parsley",
+        "Salmon fillet",
+        "Cedar plank",
+        "Dill",
+        "Lemon"
+      ],
+      "instruction_count": 9,
+      "instructions": [
+        "Soak a cedar plank in water for at least 1 hour to prevent it from burning during cooking.",
+        "Preheat the grill to medium heat, around 350\u00b0F (175\u00b0C).",
+        "Place the salmon fillet skin-side down on the soaked cedar plank.",
+        "Brush the salmon with olive oil to keep it moist during smoking.",
+        "Season the salmon with salt, pepper, and your choice of herbs such as dill and parsley.",
+        "Place the cedar plank with salmon directly on the grill grates.",
+        "Cover the grill and smoke the salmon for approximately 20-30 minutes until cooked through and flaky.",
+        "Remove the cedar plank from the grill carefully and let the salmon rest for a few minutes before serving.",
+        "Serve the smoked salmon with lemon wedges and garnish with additional fresh herbs if desired."
+      ],
+      "meal_type": "main",
+      "name": "Cedar Plank Smoked Salmon",
+      "prep_time_minutes": 15,
+      "protein_grams": 35,
+      "recommendation_rank": 6,
+      "servings": 4,
+      "total_time_minutes": 45
+    },
+    {
+      "calories": 450,
+      "cook_time_minutes": 10,
+      "cuisine": "american",
+      "description": "Eggs Benedict with smoked salmon is a classic brunch dish featuring toasted english muffins topped with cream cheese, smoked salmon, perfectly poached eggs, and rich hollandaise sauce.",
+      "dietary_tags": [
+        "nut_free"
+      ],
+      "difficulty": "medium",
+      "id": 698,
+      "ingredients": [
+        "Salt",
+        "Black pepper",
+        "Butter",
+        "Egg",
+        "Lemon juice",
+        "Cream cheese",
+        "Chive",
+        "Vinegar",
+        "Smoked salmon",
+        "Egg yolk"
+      ],
+      "instruction_count": 10,
+      "instructions": [
+        "Bring a large pot of water to a gentle simmer and add a tablespoon of vinegar.",
+        "Crack each egg into a small bowl, then gently slide each egg into the simmering water to poach for about 3-4 minutes until whites are set and yolks are soft.",
+        "Meanwhile, toast the english muffin halves until golden brown and set them on plates.",
+        "Spread a thin layer of cream cheese on each toasted muffin half.",
+        "Place smoked salmon slices evenly on top of the cream cheese on each muffin half.",
+        "Using a slotted spoon, remove the poached eggs from the water, letting excess water drain off, then carefully place one egg on top of the salmon on each muffin.",
+        "Prepare hollandaise sauce by whisking egg yolks, lemon juice, and melted butter over low heat until thickened, seasoning with salt and pepper.",
+        "Spoon warm hollandaise sauce generously over each poached egg.",
+        "Garnish with chopped fresh chives and a pinch of black pepper if desired.",
+        "Serve immediately while warm."
+      ],
+      "meal_type": "breakfast",
+      "name": "Eggs Benedict Smoked Salmon",
+      "prep_time_minutes": 15,
+      "protein_grams": 25,
+      "recommendation_rank": 7,
+      "servings": 2,
+      "total_time_minutes": 25
+    },
+    {
+      "calories": 450,
+      "cook_time_minutes": 15,
+      "cuisine": "french",
+      "description": "Grilled salmon served with classic French bearnaise sauce, a creamy and tangy herb-infused butter sauce made with egg yolks and tarragon.",
+      "dietary_tags": [
+        "gluten_free",
+        "nut_free"
+      ],
+      "difficulty": "medium",
+      "id": 1520,
+      "ingredients": [
+        "Olive oil",
+        "Salt",
+        "Black pepper",
+        "Butter",
+        "Cayenne",
+        "Salmon fillet",
+        "Shallot",
+        "White wine",
+        "Black peppercorn",
+        "Egg yolk"
+      ],
+      "instruction_count": 11,
+      "instructions": [
+        "Preheat the grill to medium-high heat and oil the grill grates to prevent sticking.",
+        "Season the salmon fillets with salt and pepper on both sides.",
+        "Place the salmon fillets on the grill, skin side down, and cook for about 4-5 minutes per side or until cooked through and slightly charred.",
+        "While the salmon is grilling, prepare the bearnaise sauce.",
+        "In a small saucepan, combine white wine vinegar, white wine, chopped shallot, dried tarragon, and peppercorns.",
+        "Simmer the mixture over medium heat until reduced by half, then strain to remove solids and let cool slightly.",
+        "Fill a double boiler or a heatproof bowl set over simmering water with the reduction and add egg yolks.",
+        "Whisk continuously until the mixture thickens and becomes pale and fluffy.",
+        "Slowly drizzle in melted butter while whisking constantly to emulsify the sauce.",
+        "Stir in chopped fresh tarragon and season with salt and a pinch of cayenne pepper.",
+        "Serve the grilled salmon topped with generous spoonfuls of bearnaise sauce and garnish with fresh tarragon if desired."
+      ],
+      "meal_type": "main",
+      "name": "Grilled Salmon with Bearnaise Sauce",
+      "prep_time_minutes": 15,
+      "protein_grams": 40,
+      "recommendation_rank": 8,
+      "servings": 4,
+      "total_time_minutes": 30
+    },
+    {
+      "calories": 220,
+      "cook_time_minutes": 2880,
+      "cuisine": "french",
+      "description": "Gravlax is a Nordic dish of raw salmon cured with a mixture of salt, sugar, and dill, resulting in a flavorful and delicate appetizer.",
+      "dietary_tags": [
+        "dairy_free",
+        "gluten_free",
+        "nut_free"
+      ],
+      "difficulty": "medium",
+      "id": 1250,
+      "ingredients": [
+        "Salt",
+        "Sugar",
+        "Salmon fillet",
+        "Dill",
+        "White pepper"
+      ],
+      "instruction_count": 10,
+      "instructions": [
+        "In a bowl, mix sugar, salt, crushed white pepper, and chopped dill together.",
+        "Lay a large piece of plastic wrap on a flat surface and spread half of the curing mixture evenly on it.",
+        "Place the salmon fillet skin-side down on the curing mixture.",
+        "Spread the remaining curing mixture evenly over the top of the salmon.",
+        "Wrap the salmon tightly with the plastic wrap, then place it in a shallow dish.",
+        "Place a weight on top of the wrapped salmon to press it down slightly.",
+        "Refrigerate the salmon for 48 hours, turning it over every 12 hours to ensure even curing.",
+        "After curing, remove the salmon from the wrap and gently rinse off the curing mixture under cold water.",
+        "Pat the salmon dry with paper towels.",
+        "Slice the gravlax thinly on a diagonal, and serve chilled with mustard sauce, rye bread, or crackers."
+      ],
+      "meal_type": "appetizer",
+      "name": "Gravlax Salmon (Cured Salmon)",
+      "prep_time_minutes": 20,
+      "protein_grams": 20,
+      "recommendation_rank": 9,
+      "servings": 4,
+      "total_time_minutes": 2900
+    },
+    {
+      "calories": 350,
+      "cook_time_minutes": 10,
+      "cuisine": "american",
+      "description": "Grilled salmon teriyaki is a Japanese-inspired dish where salmon fillets are marinated and glazed with a sweet and savory teriyaki sauce, then perfectly grilled for a flavorful and healthy meal.",
+      "dietary_tags": [
+        "dairy_free",
+        "gluten_free"
+      ],
+      "difficulty": "easy",
+      "id": 319,
+      "ingredients": [
+        "Olive oil",
+        "Scallion",
+        "Sugar",
+        "Salmon fillet",
+        "Soy sauce",
+        "Mirin",
+        "Sake",
+        "Sesame seed",
+        "Ginger"
+      ],
+      "instruction_count": 8,
+      "instructions": [
+        "Prepare the teriyaki sauce by mixing soy sauce, mirin, sake, sugar, and grated ginger in a bowl until the sugar dissolves.",
+        "Marinate the salmon fillets in half of the teriyaki sauce for at least 30 minutes in the refrigerator.",
+        "Preheat the grill to medium-high heat and lightly oil the grill grates to prevent sticking.",
+        "Remove salmon from the marinade, letting excess drip off, and grill the fillets skin-side down first for about 4-5 minutes.",
+        "Flip the salmon carefully and grill the other side for an additional 3-4 minutes or until cooked through and slightly charred.",
+        "While grilling, heat the remaining teriyaki sauce in a small saucepan over medium heat and cook until it thickens into a glaze.",
+        "Brush the cooked salmon with the thickened teriyaki glaze and remove from the grill.",
+        "Serve the grilled salmon teriyaki garnished with chopped green onion and sesame seeds over steamed rice or your preferred side."
+      ],
+      "meal_type": "main",
+      "name": "Grilled Salmon Teriyaki",
+      "prep_time_minutes": 35,
+      "protein_grams": 35,
+      "recommendation_rank": 10,
+      "servings": 4,
+      "total_time_minutes": 45
+    }
+  ]
+}

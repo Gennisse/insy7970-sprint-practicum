@@ -15,6 +15,7 @@ from history import list_recent_runs, record_run
 from scripts import render_report
 
 FIXTURE = Path(__file__).parent / "fixtures" / "recipe_response_success.json"
+INVALID_FIXTURE = Path(__file__).parent / "fixtures" / "recipe_response_invalid.json"
 
 
 def load_fixture() -> dict[str, object]:
@@ -58,10 +59,34 @@ def test_recommendations_exclude_missing_measurements() -> None:
     ]
 
 
+def test_load_processed_csv_supports_offline_dashboard() -> None:
+    """The committed demo CSV loads into the shared recommendation pipeline."""
+    recipes = main.load_processed_csv(Path("data/sample/weeknight-recipes.csv"))
+    matches = main.recommend_recipes(recipes, 30, 650)
+    assert len(recipes) == 54
+    assert matches
+    assert len(matches[0]["instructions"]) == matches[0]["instruction_count"]
+
+
+def test_sample_preferences_filter_food_and_ingredients() -> None:
+    """Offline food choices and ingredients narrow the sample before ranking."""
+    recipes = main.load_processed_csv(Path("data/sample/weeknight-recipes.csv"))
+    salmon = main.filter_recipe_preferences(recipes, "Salmon")
+    chicken_with_rice = main.filter_recipe_preferences(recipes, "Chicken", "rice")
+    assert len(salmon) == 10
+    assert all(recipe["source_search"] == "salmon" for recipe in salmon)
+    assert chicken_with_rice
+    assert all(recipe["source_search"] == "chicken" for recipe in chicken_with_rice)
+
+
 def test_validation_rejects_missing_data() -> None:
     """A response without the required data list fails validation."""
     with pytest.raises(ValidationError):
         main.validate_recipe_payload({"links": {}, "meta": {}})
+    with pytest.raises(ValidationError):
+        main.validate_recipe_payload(
+            json.loads(INVALID_FIXTURE.read_text(encoding="utf-8"))
+        )
 
 
 def test_cli_help_names_the_user_filters(capsys: pytest.CaptureFixture[str]) -> None:
@@ -119,6 +144,15 @@ def test_report_wrapper_pins_quarto_to_active_python(
     assert observed["cwd"] == render_report.PROJECT_ROOT
     assert observed["env"]["QUARTO_PYTHON"] == render_report.sys.executable
     assert observed["check"] is False
+
+
+def test_quarto_cmd_prefers_native_launcher(tmp_path: Path) -> None:
+    """Windows installs use the launcher that safely handles spaced paths."""
+    command = tmp_path / "quarto.cmd"
+    executable = tmp_path / "quarto.exe"
+    command.touch()
+    executable.touch()
+    assert render_report.find_quarto({"QUARTO_BIN": str(command)}) == str(executable)
 
 
 def test_sqlite_history_records_and_orders_runs(tmp_path: Path) -> None:

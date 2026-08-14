@@ -3,6 +3,7 @@
 from __future__ import annotations
 
 import argparse
+import csv
 import json
 import logging
 import os
@@ -15,7 +16,7 @@ from urllib.error import HTTPError, URLError
 from urllib.parse import urlencode
 from urllib.request import Request, urlopen
 
-from pydantic import BaseModel, ConfigDict, Field, ValidationError
+from pydantic import AliasChoices, BaseModel, ConfigDict, Field, ValidationError
 
 from history import list_recent_runs, record_run
 
@@ -35,8 +36,20 @@ class RecipeItem(BaseModel):
     cuisine: str | None = None
     difficulty: str | None = None
     meal_type: str | None = None
-    prep_time_minutes: int | None = None
-    calories: int | None = None
+    cook_time_minutes: int | None = Field(
+        default=None, validation_alias=AliasChoices("cook_time_minutes", "cook_time")
+    )
+    servings: int | None = None
+    protein_grams: int | float | None = Field(
+        default=None, validation_alias=AliasChoices("protein_grams", "protein")
+    )
+    dietary_tags: list[str] = Field(default_factory=list)
+    prep_time_minutes: int | None = Field(
+        default=None, validation_alias=AliasChoices("prep_time_minutes", "prep_time")
+    )
+    calories: int | None = Field(
+        default=None, validation_alias=AliasChoices("calories", "calories_per_serving")
+    )
     ingredients: list[Any] = Field(default_factory=list)
     instructions: list[Any] = Field(default_factory=list)
 
@@ -199,7 +212,14 @@ def validate_recipe_payload(payload: dict[str, Any]) -> RecipeResponse:
 
 def normalize_recipe(recipe: RecipeItem) -> dict[str, Any]:
     """Convert a provider recipe into the stable processed-output schema."""
-    ingredients = recipe.ingredients if isinstance(recipe.ingredients, list) else []
+    raw_ingredients = recipe.ingredients if isinstance(recipe.ingredients, list) else []
+    ingredients = [
+        str(item.get("name") or "").strip()
+        if isinstance(item, dict)
+        else str(item).strip()
+        for item in raw_ingredients
+    ]
+    ingredients = [item for item in ingredients if item]
     instructions = recipe.instructions if isinstance(recipe.instructions, list) else []
     return {
         "id": recipe.id,
@@ -209,8 +229,19 @@ def normalize_recipe(recipe: RecipeItem) -> dict[str, Any]:
         "difficulty": recipe.difficulty,
         "meal_type": recipe.meal_type,
         "prep_time_minutes": recipe.prep_time_minutes,
+        "cook_time_minutes": recipe.cook_time_minutes,
+        "total_time_minutes": (
+            recipe.prep_time_minutes + recipe.cook_time_minutes
+            if recipe.prep_time_minutes is not None
+            and recipe.cook_time_minutes is not None
+            else None
+        ),
         "calories": recipe.calories,
+        "protein_grams": recipe.protein_grams,
+        "servings": recipe.servings,
+        "dietary_tags": recipe.dietary_tags,
         "ingredients": ingredients[:10],
+        "instructions": instructions,
         "instruction_count": len(instructions),
     }
 
@@ -239,6 +270,125 @@ def recommend_recipes(
     for rank, recipe in enumerate(eligible, start=1):
         recipe["recommendation_rank"] = rank
     return eligible
+
+
+def load_processed_csv(path: Path) -> list[dict[str, Any]]:
+    """Load normalized recipe rows, failing clearly on missing or invalid fields."""
+    required = {"id", "name", "prep_time_minutes", "calories"}
+    with path.open(encoding="utf-8-sig", newline="") as source:
+        reader = csv.DictReader(source)
+        missing = required.difference(reader.fieldnames or [])
+        if missing:
+            raise ValueError(
+                f"sample CSV is missing required columns: {', '.join(sorted(missing))}"
+            )
+        recipes: list[dict[str, Any]] = []
+        for row_number, row in enumerate(reader, start=2):
+            try:
+                recipes.append(
+                    {
+                        "id": int(row["id"]),
+                        "name": row["name"].strip(),
+                        "description": row.get("description", "").strip() or None,
+                        "cuisine": row.get("cuisine", "").strip() or None,
+                        "difficulty": row.get("difficulty", "").strip() or None,
+                        "meal_type": row.get("meal_type", "").strip() or None,
+                        "cook_time_minutes": int(row["cook_time_minutes"]),
+                        "total_time_minutes": int(row["total_time_minutes"]),
+                        "protein_grams": float(row["protein_grams"]),
+                        "servings": int(row["servings"]),
+                        "dietary_tags": [
+                            tag.strip()
+                            for tag in row.get("dietary_tags", "").split("|")
+                            if tag.strip()
+                        ],
+                        "source_search": row.get("source_search", "").strip() or None,
+                        "retrieved_at_utc": row.get("retrieved_at_utc", "").strip()
+                        or None,
+                        "prep_time_minutes": int(row["prep_time_minutes"]),
+                        "calories": int(row["calories"]),
+                        "ingredients": [
+                            item.strip()
+                            for item in row.get("ingredients", "").split("|")
+                            if item.strip()
+                        ],
+                        "instructions": [
+                            step.strip()
+                            for step in row.get("instructions", "").split("|")
+                            if step.strip()
+                        ],
+                        "instruction_count": int(row.get("instruction_count", "0")),
+                    }
+                )
+            except (TypeError, ValueError) as exc:
+                raise ValueError(
+                    f"sample CSV row {row_number} has invalid numeric data"
+                ) from exc
+    for recipe in recipes:
+        if not recipe["instructions"]:
+            recipe["instructions"] = build_demo_instructions(
+                recipe, int(recipe["instruction_count"])
+            )
+        recipe["instruction_count"] = len(recipe["instructions"])
+    return recipes
+
+
+def build_demo_instructions(recipe: dict[str, Any], requested_count: int) -> list[str]:
+    """Create an illustrative preparation outline of the requested length."""
+    count = max(requested_count, 2)
+    ingredients = [str(item) for item in recipe.get("ingredients", [])]
+    ingredient_text = ", ".join(ingredients)
+    main_ingredient = ingredients[0] if ingredients else "main ingredients"
+    middle_steps = [
+        "Wash produce and measure the remaining ingredients.",
+        "Chop or portion the ingredients into even pieces.",
+        "Preheat the pan, pot, or oven appropriate for the dish.",
+        f"Cook the {main_ingredient} until properly done; use a food thermometer for meat or fish.",
+        "Add the remaining ingredients in the order needed for even cooking.",
+        "Season gradually and stir or turn the food as needed.",
+        "Cook until the texture and consistency suit the dish.",
+        "Taste and make a final seasoning adjustment.",
+    ]
+    return [
+        f"Gather the ingredients for {recipe['name']}: {ingredient_text}.",
+        *middle_steps[: count - 2],
+        "Portion the finished dish and serve.",
+    ]
+
+
+def filter_recipe_preferences(
+    recipes: Sequence[dict[str, Any]], search: str, ingredients: str = ""
+) -> list[dict[str, Any]]:
+    """Match recipes to a food choice and every requested ingredient."""
+    search_term = search.strip().casefold()
+    required_ingredients = [
+        item.strip().casefold() for item in ingredients.split(",") if item.strip()
+    ]
+    matches: list[dict[str, Any]] = []
+    for recipe in recipes:
+        recipe_ingredients = [
+            str(item).casefold() for item in recipe.get("ingredients", [])
+        ]
+        searchable = " ".join(
+            [
+                str(recipe.get("name") or ""),
+                str(recipe.get("description") or ""),
+                str(recipe.get("cuisine") or ""),
+                str(recipe.get("meal_type") or ""),
+                str(recipe.get("source_search") or ""),
+                *recipe_ingredients,
+            ]
+        ).casefold()
+        search_matches = (
+            not search_term or search_term == "anything" or search_term in searchable
+        )
+        ingredients_match = all(
+            any(required in available for available in recipe_ingredients)
+            for required in required_ingredients
+        )
+        if search_matches and ingredients_match:
+            matches.append(dict(recipe))
+    return matches
 
 
 def summarize_payload(

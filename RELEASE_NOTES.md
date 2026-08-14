@@ -1,27 +1,29 @@
-# Weeknight Recipe Scout 1.0.0
+# Weeknight Recipe Scout 1.1.0
 
-Weeknight Recipe Scout 1.0.0 is the portfolio-ready release for busy home cooks who want practical recipe comparisons within time and calorie limits.
+Weeknight Recipe Scout 1.1.0 is the final portfolio release for busy home cooks who want practical, explainable recipe comparisons.
 
 ## Highlights
 
-- Fetches real Recipe API data and preserves raw and processed evidence.
-- Validates provider data before ranking or saving trusted results.
-- Ranks only recipes with complete prep-time and calorie measurements.
-- Presents comparisons in an interactive Streamlit dashboard and a reproducible Quarto PDF.
-- Adds SQLite recommendation history shared by the CLI and dashboard.
-- Installs the `weeknight-recipe-scout` command from a standard wheel.
-- Runs formatting, lint, tests, and package builds through one local script and GitHub Actions.
+- Preserves six real Recipe API responses and validated processed evidence.
+- Provides a reproducible 54-recipe offline snapshot without requiring an API key.
+- Filters by food choice, required ingredients, dietary tags, preparation time, and calories.
+- Compares cook time, total time, protein, servings, cuisine, difficulty, and instruction count.
+- Shows ingredients and complete provider instructions for the selected recipe.
+- Persists recent recommendation decisions in SQLite.
+- Includes a protein-focused Quarto report with a table, figure, interpretation, and provenance.
+- Runs formatting, lint, 12 offline tests, and package builds locally and in GitHub Actions.
 
 ## Verification
 
-- 9 fixture-backed tests pass without a live API call.
-- Ruff formatting and lint checks pass.
-- `uv build --no-sources` creates both standard distributions.
-- The wheel installs and its console command runs in an isolated virtual environment.
-- The Quarto PDF renders with the Python interpreter restored by `uv sync` and passes visual inspection.
+- `uv sync --locked`
+- `uv run pytest`
+- `uv run streamlit run streamlit_app.py`
+- `uv run python scripts/render_report.py`
+- `uv build --no-sources`
 
 ## Known limitations
 
 - Live searches require a Recipe API key and network access.
-- Recommendation quality is limited to the provider's returned page and available measurements.
+- The saved snapshot contains the first page of six searches retrieved on August 13, 2026.
+- Provider nutrition and dietary tags are informational and are not medical advice.
 - SQLite history is local to one installation and does not yet perform schema migrations.

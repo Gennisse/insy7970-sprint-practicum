@@ -1,0 +1,17 @@
+{
+  "data": "not-a-list",
+  "links": {
+    "first": "https://recipeapi.io/api/v1/recipes?page=1",
+    "last": "https://recipeapi.io/api/v1/recipes?page=3",
+    "prev": null,
+    "next": "https://recipeapi.io/api/v1/recipes?page=2"
+  },
+  "meta": {
+    "current_page": 1,
+    "last_page": 3,
+    "per_page": 2,
+    "total": 6,
+    "path": "https://recipeapi.io/api/v1/recipes",
+    "language": "en"
+  }
+}

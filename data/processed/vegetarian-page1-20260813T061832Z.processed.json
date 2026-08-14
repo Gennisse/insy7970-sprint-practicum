@@ -1,0 +1,394 @@
+{
+  "counts": {
+    "current_page": 1,
+    "last_page": 1,
+    "per_page": 10,
+    "recipes_returned": 4,
+    "recommendations": 4,
+    "total": 4
+  },
+  "links": {
+    "first": "https://recipeapi.io/api/v1/recipes?per_page=10&search=vegetarian&page=1",
+    "last": "https://recipeapi.io/api/v1/recipes?per_page=10&search=vegetarian&page=1",
+    "next": null,
+    "prev": null
+  },
+  "meta": {
+    "language": "en",
+    "path": "https://recipeapi.io/api/v1/recipes"
+  },
+  "query": {
+    "ingredients": "",
+    "page": 1,
+    "per_page": 10,
+    "search": "vegetarian"
+  },
+  "recipes": [
+    {
+      "calories": 450,
+      "cook_time_minutes": 10,
+      "cuisine": "thai",
+      "description": "Pad Thai with Tofu is a classic Thai stir-fried noodle dish made vegetarian by substituting traditional meat with tofu, featuring a flavorful tamarind-based sauce and garnished with peanuts and fresh herbs.",
+      "dietary_tags": [
+        "vegetarian",
+        "nut_free"
+      ],
+      "difficulty": "medium",
+      "id": 2321,
+      "ingredients": [
+        "Egg",
+        "Vegetable oil",
+        "Garlic",
+        "Cilantro",
+        "Scallion",
+        "Lime",
+        "Soy sauce",
+        "Shallot",
+        "Chili flake",
+        "Peanut"
+      ],
+      "instruction_count": 11,
+      "instructions": [
+        "Drain the tofu and press to remove excess moisture, then cut into bite-sized cubes.",
+        "Cook the rice noodles according to package instructions until soft but still slightly firm, then drain and set aside.",
+        "Heat vegetable oil in a large wok or skillet over medium-high heat.",
+        "Add tofu cubes and stir-fry until golden on all sides, then remove and set aside.",
+        "In the same wok, saut\u00e9 garlic and shallot until fragrant and translucent.",
+        "Add soaked rice noodles, tamarind paste, soy sauce, and palm sugar to the wok, tossing to combine and coat the noodles evenly.",
+        "Push noodles to the side and crack the eggs into the empty space, scrambling until just set, then mix with the noodles.",
+        "Add the tofu back into the wok and toss everything together gently.",
+        "Add bean sprouts and spring onion, mix briefly just to warm through.",
+        "Serve immediately, garnished with chopped peanuts, lime wedges, and fresh cilantro.",
+        "Optionally, serve with chili flakes on the side for added heat."
+      ],
+      "meal_type": "main",
+      "name": "Pad Thai with Tofu Vegetarian",
+      "prep_time_minutes": 15,
+      "protein_grams": 18,
+      "servings": 2,
+      "total_time_minutes": 25
+    },
+    {
+      "calories": 180,
+      "cook_time_minutes": 20,
+      "cuisine": "japanese",
+      "description": "Shojin Ryori is a traditional Japanese Buddhist vegetarian cuisine emphasizing simple, balanced, and seasonal ingredients, prepared without meat or strong flavors to promote purity and mindfulness.",
+      "dietary_tags": [
+        "vegetarian",
+        "vegan",
+        "gluten_free",
+        "nut_free",
+        "kosher"
+      ],
+      "difficulty": "medium",
+      "id": 8883,
+      "ingredients": [
+        "Salt",
+        "Water",
+        "Carrot",
+        "Soy sauce",
+        "Mirin",
+        "Sesame seed",
+        "Sesame oil",
+        "Tofu",
+        "Kombu",
+        "Daikon"
+      ],
+      "instruction_count": 9,
+      "instructions": [
+        "Prepare all vegetables by washing and cutting them into bite-sized pieces as appropriate.",
+        "Soak kombu in water for about 30 minutes to make dashi stock, then slowly heat the kombu water without boiling to extract umami, removing kombu before the water boils.",
+        "Slice konnyaku thinly and blanch in boiling water for a few minutes to remove its odor and soften it.",
+        "Heat a pan and lightly toast sesame seeds until fragrant, setting aside for garnish.",
+        "Lightly saut\u00e9 root vegetables such as carrot and daikon radish in a small amount of sesame oil until slightly tender.",
+        "Add the prepared dashi stock, simmer vegetables gently until fully cooked but firm to the bite.",
+        "Add tofu and simmer gently to absorb flavors.",
+        "Season with soy sauce, mirin, and a pinch of salt, tasting carefully to maintain balance and subtlety.",
+        "Arrange the cooked vegetables and tofu artfully on a serving dish, garnishing with toasted sesame seeds and fresh shiso leaf if available."
+      ],
+      "meal_type": "main",
+      "name": "Shojin Ryori (Buddhist Vegetarian Cuisine)",
+      "prep_time_minutes": 20,
+      "protein_grams": 10,
+      "servings": 2,
+      "total_time_minutes": 40
+    },
+    {
+      "calories": 280,
+      "cook_time_minutes": 35,
+      "cuisine": "american",
+      "description": "A hearty and flavorful meat-free chili packed with vegetables and beans, perfect for a nutritious and comforting meal.",
+      "dietary_tags": [
+        "dairy_free",
+        "gluten_free",
+        "nut_free",
+        "vegan",
+        "vegetarian"
+      ],
+      "difficulty": "easy",
+      "id": 809,
+      "ingredients": [
+        "Olive oil",
+        "Salt",
+        "Black pepper",
+        "Onion",
+        "Garlic",
+        "Cilantro",
+        "Smoked paprika",
+        "Chili powder",
+        "Cumin",
+        "Black bean"
+      ],
+      "instruction_count": 8,
+      "instructions": [
+        "Heat olive oil in a large pot over medium heat.",
+        "Add chopped onion, bell pepper, and garlic; saut\u00e9 until softened.",
+        "Stir in chopped carrot and zucchini, cook for 5 minutes.",
+        "Add canned diced tomato, kidney beans, black beans, and corn to the pot.",
+        "Pour in vegetable broth and stir to combine.",
+        "Season with chili powder, cumin, smoked paprika, salt, and black pepper.",
+        "Bring the mixture to a boil, then reduce heat and simmer uncovered for 30 minutes, stirring occasionally.",
+        "Adjust seasoning to taste and serve hot, garnished with fresh cilantro if desired."
+      ],
+      "meal_type": "main",
+      "name": "Vegetarian Chili",
+      "prep_time_minutes": 15,
+      "protein_grams": 15,
+      "servings": 4,
+      "total_time_minutes": 50
+    },
+    {
+      "calories": 220,
+      "cook_time_minutes": 15,
+      "cuisine": "chinese",
+      "description": "Vegetarian Mapo Tofu is a plant-based version of the classic Sichuan spicy tofu dish with a flavorful, spicy, and numbing sauce made from fermented bean paste and Sichuan peppercorns.",
+      "dietary_tags": [
+        "vegetarian",
+        "vegan",
+        "dairy_free",
+        "nut_free"
+      ],
+      "difficulty": "easy",
+      "id": 11135,
+      "ingredients": [
+        "Cornstarch",
+        "Vegetable oil",
+        "Garlic",
+        "Water",
+        "Scallion",
+        "Sugar",
+        "Soy sauce",
+        "Sesame oil",
+        "Ginger",
+        "Vegetable broth"
+      ],
+      "instruction_count": 10,
+      "instructions": [
+        "Drain the tofu and cut it into 2 cm cubes. Set aside.",
+        "Heat vegetable oil in a pan over medium heat. Add minced garlic, minced ginger, and chopped green onion whites. Saut\u00e9 until fragrant.",
+        "Add doubanjiang (spicy fermented bean paste) and stir-fry for about 1 minute to release aroma.",
+        "Add vegetable broth and bring to a simmer.",
+        "Gently add tofu cubes to the broth and simmer for 5 minutes to absorb flavors.",
+        "Mix the cornstarch with water to make a slurry.",
+        "Slowly stir in the cornstarch slurry to the pan, gently stirring to thicken the sauce without breaking the tofu.",
+        "Add soy sauce, sugar, and a pinch of ground Sichuan peppercorns. Adjust seasoning to taste.",
+        "Add chopped green onion greens and a drizzle of sesame oil. Stir gently.",
+        "Serve hot over steamed rice."
+      ],
+      "meal_type": "main",
+      "name": "Vegetarian Mapo Tofu",
+      "prep_time_minutes": 10,
+      "protein_grams": 14,
+      "servings": 2,
+      "total_time_minutes": 25
+    }
+  ],
+  "recommendation_limits": {
+    "max_calories": 1500,
+    "max_prep_minutes": 120
+  },
+  "recommendations": [
+    {
+      "calories": 220,
+      "cook_time_minutes": 15,
+      "cuisine": "chinese",
+      "description": "Vegetarian Mapo Tofu is a plant-based version of the classic Sichuan spicy tofu dish with a flavorful, spicy, and numbing sauce made from fermented bean paste and Sichuan peppercorns.",
+      "dietary_tags": [
+        "vegetarian",
+        "vegan",
+        "dairy_free",
+        "nut_free"
+      ],
+      "difficulty": "easy",
+      "id": 11135,
+      "ingredients": [
+        "Cornstarch",
+        "Vegetable oil",
+        "Garlic",
+        "Water",
+        "Scallion",
+        "Sugar",
+        "Soy sauce",
+        "Sesame oil",
+        "Ginger",
+        "Vegetable broth"
+      ],
+      "instruction_count": 10,
+      "instructions": [
+        "Drain the tofu and cut it into 2 cm cubes. Set aside.",
+        "Heat vegetable oil in a pan over medium heat. Add minced garlic, minced ginger, and chopped green onion whites. Saut\u00e9 until fragrant.",
+        "Add doubanjiang (spicy fermented bean paste) and stir-fry for about 1 minute to release aroma.",
+        "Add vegetable broth and bring to a simmer.",
+        "Gently add tofu cubes to the broth and simmer for 5 minutes to absorb flavors.",
+        "Mix the cornstarch with water to make a slurry.",
+        "Slowly stir in the cornstarch slurry to the pan, gently stirring to thicken the sauce without breaking the tofu.",
+        "Add soy sauce, sugar, and a pinch of ground Sichuan peppercorns. Adjust seasoning to taste.",
+        "Add chopped green onion greens and a drizzle of sesame oil. Stir gently.",
+        "Serve hot over steamed rice."
+      ],
+      "meal_type": "main",
+      "name": "Vegetarian Mapo Tofu",
+      "prep_time_minutes": 10,
+      "protein_grams": 14,
+      "recommendation_rank": 1,
+      "servings": 2,
+      "total_time_minutes": 25
+    },
+    {
+      "calories": 280,
+      "cook_time_minutes": 35,
+      "cuisine": "american",
+      "description": "A hearty and flavorful meat-free chili packed with vegetables and beans, perfect for a nutritious and comforting meal.",
+      "dietary_tags": [
+        "dairy_free",
+        "gluten_free",
+        "nut_free",
+        "vegan",
+        "vegetarian"
+      ],
+      "difficulty": "easy",
+      "id": 809,
+      "ingredients": [
+        "Olive oil",
+        "Salt",
+        "Black pepper",
+        "Onion",
+        "Garlic",
+        "Cilantro",
+        "Smoked paprika",
+        "Chili powder",
+        "Cumin",
+        "Black bean"
+      ],
+      "instruction_count": 8,
+      "instructions": [
+        "Heat olive oil in a large pot over medium heat.",
+        "Add chopped onion, bell pepper, and garlic; saut\u00e9 until softened.",
+        "Stir in chopped carrot and zucchini, cook for 5 minutes.",
+        "Add canned diced tomato, kidney beans, black beans, and corn to the pot.",
+        "Pour in vegetable broth and stir to combine.",
+        "Season with chili powder, cumin, smoked paprika, salt, and black pepper.",
+        "Bring the mixture to a boil, then reduce heat and simmer uncovered for 30 minutes, stirring occasionally.",
+        "Adjust seasoning to taste and serve hot, garnished with fresh cilantro if desired."
+      ],
+      "meal_type": "main",
+      "name": "Vegetarian Chili",
+      "prep_time_minutes": 15,
+      "protein_grams": 15,
+      "recommendation_rank": 2,
+      "servings": 4,
+      "total_time_minutes": 50
+    },
+    {
+      "calories": 450,
+      "cook_time_minutes": 10,
+      "cuisine": "thai",
+      "description": "Pad Thai with Tofu is a classic Thai stir-fried noodle dish made vegetarian by substituting traditional meat with tofu, featuring a flavorful tamarind-based sauce and garnished with peanuts and fresh herbs.",
+      "dietary_tags": [
+        "vegetarian",
+        "nut_free"
+      ],
+      "difficulty": "medium",
+      "id": 2321,
+      "ingredients": [
+        "Egg",
+        "Vegetable oil",
+        "Garlic",
+        "Cilantro",
+        "Scallion",
+        "Lime",
+        "Soy sauce",
+        "Shallot",
+        "Chili flake",
+        "Peanut"
+      ],
+      "instruction_count": 11,
+      "instructions": [
+        "Drain the tofu and press to remove excess moisture, then cut into bite-sized cubes.",
+        "Cook the rice noodles according to package instructions until soft but still slightly firm, then drain and set aside.",
+        "Heat vegetable oil in a large wok or skillet over medium-high heat.",
+        "Add tofu cubes and stir-fry until golden on all sides, then remove and set aside.",
+        "In the same wok, saut\u00e9 garlic and shallot until fragrant and translucent.",
+        "Add soaked rice noodles, tamarind paste, soy sauce, and palm sugar to the wok, tossing to combine and coat the noodles evenly.",
+        "Push noodles to the side and crack the eggs into the empty space, scrambling until just set, then mix with the noodles.",
+        "Add the tofu back into the wok and toss everything together gently.",
+        "Add bean sprouts and spring onion, mix briefly just to warm through.",
+        "Serve immediately, garnished with chopped peanuts, lime wedges, and fresh cilantro.",
+        "Optionally, serve with chili flakes on the side for added heat."
+      ],
+      "meal_type": "main",
+      "name": "Pad Thai with Tofu Vegetarian",
+      "prep_time_minutes": 15,
+      "protein_grams": 18,
+      "recommendation_rank": 3,
+      "servings": 2,
+      "total_time_minutes": 25
+    },
+    {
+      "calories": 180,
+      "cook_time_minutes": 20,
+      "cuisine": "japanese",
+      "description": "Shojin Ryori is a traditional Japanese Buddhist vegetarian cuisine emphasizing simple, balanced, and seasonal ingredients, prepared without meat or strong flavors to promote purity and mindfulness.",
+      "dietary_tags": [
+        "vegetarian",
+        "vegan",
+        "gluten_free",
+        "nut_free",
+        "kosher"
+      ],
+      "difficulty": "medium",
+      "id": 8883,
+      "ingredients": [
+        "Salt",
+        "Water",
+        "Carrot",
+        "Soy sauce",
+        "Mirin",
+        "Sesame seed",
+        "Sesame oil",
+        "Tofu",
+        "Kombu",
+        "Daikon"
+      ],
+      "instruction_count": 9,
+      "instructions": [
+        "Prepare all vegetables by washing and cutting them into bite-sized pieces as appropriate.",
+        "Soak kombu in water for about 30 minutes to make dashi stock, then slowly heat the kombu water without boiling to extract umami, removing kombu before the water boils.",
+        "Slice konnyaku thinly and blanch in boiling water for a few minutes to remove its odor and soften it.",
+        "Heat a pan and lightly toast sesame seeds until fragrant, setting aside for garnish.",
+        "Lightly saut\u00e9 root vegetables such as carrot and daikon radish in a small amount of sesame oil until slightly tender.",
+        "Add the prepared dashi stock, simmer vegetables gently until fully cooked but firm to the bite.",
+        "Add tofu and simmer gently to absorb flavors.",
+        "Season with soy sauce, mirin, and a pinch of salt, tasting carefully to maintain balance and subtlety.",
+        "Arrange the cooked vegetables and tofu artfully on a serving dish, garnishing with toasted sesame seeds and fresh shiso leaf if available."
+      ],
+      "meal_type": "main",
+      "name": "Shojin Ryori (Buddhist Vegetarian Cuisine)",
+      "prep_time_minutes": 20,
+      "protein_grams": 10,
+      "recommendation_rank": 4,
+      "servings": 2,
+      "total_time_minutes": 40
+    }
+  ]
+}

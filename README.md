@@ -1,6 +1,6 @@
 # Weeknight Recipe Scout
 
-Weeknight Recipe Scout helps busy home cooks compare Recipe API results against two practical constraints: available prep time and a calorie ceiling. It saves the original response for provenance, validates the provider schema, creates a stable processed summary, and ranks only recipes with complete measurements that meet both limits.
+Weeknight Recipe Scout helps busy home cooks compare Recipe API results against practical constraints: available prep time, a calorie ceiling, ingredient preferences, and dietary needs. It saves the original response for provenance, validates the provider schema, creates a stable processed summary, and ranks only recipes with complete measurements that meet both limits. The dashboard also compares cook and total time, protein per serving, servings, cuisine, difficulty, dietary tags, ingredients, and provider instructions.
 
 ## Fastest path to a result
 
@@ -25,7 +25,13 @@ uv run streamlit run streamlit_app.py
 
 Set the meal idea, desired ingredients, maximum prep time, and maximum calories in the sidebar. The table ranks qualifying recipes by shortest prep time and then lowest calories. Recipes missing either measurement stay in the saved results but are not recommended.
 
-The dashboard also shows the five most recent searches and top picks from SQLite, giving a busy cook a useful memory across sessions.
+The dashboard also shows the five most recent searches and top picks from SQLite, giving a busy cook a useful memory across sessions. Select **Load saved API snapshot** to explore 54 recipes retrieved from Recipe API on August 13, 2026, without an API key or network request. The committed CSV records its source search and retrieval timestamp, and the matching raw and processed responses are preserved under `data/raw/` and `data/processed/`. Select **Search live Recipe API** when a key is configured. Recipe selections and details persist during the current browser session.
+
+Rebuild the saved snapshot from the six committed processed files with:
+
+```powershell
+uv run python scripts/build_sample_snapshot.py data/processed/chicken-page1-20260813T061831Z.processed.json data/processed/salmon-page1-20260813T061832Z.processed.json data/processed/vegetarian-page1-20260813T061832Z.processed.json data/processed/pasta-page1-20260813T061833Z.processed.json data/processed/turkey-page1-20260813T061833Z.processed.json data/processed/beef-page1-20260813T061834Z.processed.json --output data/sample/weeknight-recipes.csv
+```
 
 ## Configuration
 
@@ -35,7 +41,7 @@ The dashboard also shows the five most recent searches and top picks from SQLite
 | `RECIPE_SEARCH` | Search term | `chicken` |
 | `RECIPE_INGREDIENTS` | Comma-separated provider ingredient filter | empty |
 | `RECIPE_PAGE` | Positive result page | `1` |
-| `RECIPE_PER_PAGE` | Results per page, 1–50 | `10` |
+| `RECIPE_PER_PAGE` | Results per page, 1-50 | `10` |
 | `MAX_PREP_MINUTES` | Recommendation prep-time ceiling | `30` |
 | `MAX_CALORIES` | Recommendation calorie ceiling | `650` |
 | `LOG_LEVEL` | `DEBUG`, `INFO`, `WARNING`, `ERROR`, or `CRITICAL` | `INFO` |
@@ -77,7 +83,7 @@ uv build --no-sources
 This creates a wheel and source archive under `dist/`. Install the wheel as a command-line tool:
 
 ```powershell
-uv tool install dist/weeknight_recipe_scout-1.0.0-py3-none-any.whl
+uv tool install dist/weeknight_recipe_scout-1.1.0-py3-none-any.whl
 weeknight-recipe-scout --help
 ```
 
@@ -91,7 +97,7 @@ The authoritative source is [`reports/weeknight-recipe-report.qmd`](reports/week
 uv run python scripts/render_report.py
 ```
 
-The wrapper sets Quarto's `QUARTO_PYTHON` to the interpreter restored by `uv sync`, preventing Quarto from selecting an unrelated system Jupyter kernel. The report uses the committed fixture at `tests/fixtures/recipe_response_success.json`, calls the same validation and recommendation functions as the application, and requires no API key. If Quarto is not on `PATH`, set `QUARTO_BIN` to its executable path before running the wrapper.
+The wrapper sets Quarto's `QUARTO_PYTHON` to the interpreter restored by `uv sync`, preventing Quarto from selecting an unrelated system Jupyter kernel. The report uses the committed 54-recipe API snapshot, calls the same loading and recommendation functions as the dashboard, and requires no API key or network request. It compares protein per serving while enforcing preparation-time, total-time, and calorie limits. If Quarto is not on `PATH`, set `QUARTO_BIN` to its executable path before running the wrapper.
 
 ## Inputs and outputs
 
@@ -120,6 +126,5 @@ The [data dictionary](docs/data-dictionary.md) defines every stable processed fi
 - [`reports/weeknight-recipe-report.qmd`](reports/weeknight-recipe-report.qmd): authoritative report source.
 - [`AGENTS.md`](AGENTS.md): durable setup, navigation, and source-of-truth guidance.
 - [`LICENSE`](LICENSE): MIT license.
-- [`docs/specs/`](docs/specs/): historical sprint specifications; current behavior is defined by code, tests, help, and this README.
 
 Recipe data comes from [Recipe API](https://recipeapi.io/docs/). Provider terms and data quality remain the provider's responsibility.

@@ -1,6 +1,6 @@
 ---
-title: "Can a 30-minute dinner still stay under 600 calories?"
-subtitle: "A reproducible Weeknight Recipe Scout comparison"
+title: "Which one-hour weeknight recipes deliver the most protein?"
+subtitle: "A reproducible comparison of a saved Recipe API snapshot"
 author: "Gennisse"
 date: today
 format:
@@ -8,7 +8,7 @@ format:
     toc: false
     number-sections: true
     geometry:
-      - margin=1in
+      - margin=0.85in
 execute:
   echo: false
   warning: false
@@ -16,11 +16,10 @@ execute:
 
 ## Summary
 
-This report asks a decision-sized question for a busy home cook: among the recorded chicken search results, which recipes can be prepared in no more than 30 minutes while staying at or below 600 calories? The report validates and ranks the evidence with the same project functions used by the CLI and dashboard.
+This report asks a practical question for a busy home cook: among saved Recipe API results that require no more than 30 minutes of preparation, no more than 60 minutes total, and no more than 650 calories per serving, which options provide the most protein? The analysis begins with the same validated loading and recommendation behavior as the dashboard, then applies the report's explicit total-time ceiling.
 
 ```{python}
 from datetime import date
-import json
 from pathlib import Path
 import sys
 
@@ -31,66 +30,68 @@ if not (project_root / "main.py").exists():
     project_root = project_root.parent
 sys.path.insert(0, str(project_root))
 
-from main import summarize_payload, validate_recipe_payload
+from main import load_processed_csv, recommend_recipes
 
-input_path = project_root / "tests" / "fixtures" / "recipe_response_success.json"
-payload = json.loads(input_path.read_text(encoding="utf-8"))
-response = validate_recipe_payload(payload)
-query = {"search": "chicken", "ingredients": "", "page": 1, "per_page": 2}
-summary = summarize_payload(response, query, max_prep=30, max_calories=600)
-recipes = summary["recipes"]
-matches = summary["recommendations"]
-top_name = matches[0]["name"] if matches else "no recipe"
-top_minutes = matches[0]["prep_time_minutes"] if matches else "not available"
-top_calories = matches[0]["calories"] if matches else "not available"
+input_path = project_root / "data" / "sample" / "weeknight-recipes.csv"
+recipes = load_processed_csv(input_path)
+base_matches = recommend_recipes(recipes, max_prep=30, max_calories=650)
+matches = [recipe for recipe in base_matches if recipe["total_time_minutes"] <= 60]
+ranked = sorted(matches, key=lambda recipe: (-recipe["protein_grams"], recipe["total_time_minutes"], recipe["name"]))
+top = ranked[0]
+retrieval_dates = sorted({recipe["retrieved_at_utc"] for recipe in recipes})
 ```
 
-The recorded page contains `{python} len(recipes)` recipes. `{python} len(matches)` meets both limits: `{python} top_name`. The qualifying option takes `{python} top_minutes` minutes and contains `{python} top_calories` calories.
+The saved snapshot contains `{python} len(recipes)` unique recipes from six searches. `{python} len(matches)` meet both decision limits. The highest-protein qualifying option is **`{python} top['name']`**, with `{python} f"{top['protein_grams']:g}"` grams of protein, `{python} top['calories']` calories per serving, `{python} top['prep_time_minutes']` minutes of preparation, and `{python} top['total_time_minutes']` total minutes.
 
 ## Evidence
 
 ```{python}
 #| output: asis
-print("| Recipe | Cuisine | Prep (minutes) | Calories | Meets both limits? |")
-print("|---|---|---:|---:|---|")
-matched_names = {recipe["name"] for recipe in matches}
-for recipe in recipes:
-    print(f"| {recipe['name']} | {recipe['cuisine']} | {recipe['prep_time_minutes']} | {recipe['calories']} | {'Yes' if recipe['name'] in matched_names else 'No'} |")
+print("| Recipe | Search | Total time | Protein | Calories | Servings |")
+print("|---|---|---:|---:|---:|---:|")
+for recipe in ranked[:8]:
+    print(
+        f"| {recipe['name']} | {recipe['source_search']} | "
+        f"{recipe['total_time_minutes']} min | {recipe['protein_grams']:g} g | "
+        f"{recipe['calories']} | {recipe['servings']} |"
+    )
 ```
 
 ```{python}
-#| label: fig-recipe-comparison
-#| fig-cap: "Recorded chicken recipes compared with the 30-minute limit; bar labels show calories."
+#| label: fig-protein-time
+#| fig-cap: "Protein and total time for recipes meeting the prep-time and calorie limits."
 #| fig-pos: H
-names = [recipe["name"] for recipe in recipes]
-prep = [recipe["prep_time_minutes"] for recipe in recipes]
-colors = ["#2a9d8f" if name in matched_names else "#e76f51" for name in names]
-fig, ax = plt.subplots(figsize=(7, 2.4))
-bars = ax.barh(names, prep, color=colors)
-ax.axvline(30, color="#264653", linestyle="--", linewidth=1.5, label="30-minute limit")
-for bar, recipe in zip(bars, recipes):
-    ax.text(bar.get_width() + 0.7, bar.get_y() + bar.get_height()/2, f"{recipe['calories']} cal", va="center", fontsize=9)
-ax.set_xlabel("Preparation time (minutes)")
-ax.set_xlim(0, max(prep) + 13)
-ax.legend(loc="lower right")
+fig, ax = plt.subplots(figsize=(7.2, 4.0))
+for search in sorted({recipe["source_search"] for recipe in matches}):
+    group = [recipe for recipe in matches if recipe["source_search"] == search]
+    ax.scatter(
+        [recipe["total_time_minutes"] for recipe in group],
+        [recipe["protein_grams"] for recipe in group],
+        label=search.title(),
+        s=42,
+        alpha=0.78,
+    )
+ax.scatter([top["total_time_minutes"]], [top["protein_grams"]], marker="*", s=180, color="#d1495b", zorder=5)
+ax.annotate(top["name"], (top["total_time_minutes"], top["protein_grams"]), xytext=(6, 7), textcoords="offset points", fontsize=8)
+ax.set_xlabel("Total time (prep + cook minutes)")
+ax.set_ylabel("Protein per serving (g)")
+ax.legend(ncol=3, fontsize=8, frameon=False)
 ax.spines[["top", "right"]].set_visible(False)
 plt.tight_layout()
 ```
 
 ## Interpretation
 
-Chicken Pasta is the stronger fit for this particular weeknight because it clears both thresholds. Chicken Soup has fewer calories, but its 35-minute preparation time exceeds the available window. The ranking does not claim universal health or taste quality; it answers only the stated time-and-calorie decision. A recipe with missing prep time or calories would be retained in the full results but excluded from the recommendation rather than treated as eligible.
+Protein adds a useful comparison beyond speed and calories. The one-hour ceiling prevents a recipe with brief hands-on preparation but several hours of cooking from being labeled a practical weeknight option. The top-ranked option answers this report's specific question, but dietary tags, cuisine, serving count, and ingredient preferences may change a user's final choice. Provider dietary tags should be treated as screening information rather than medical advice.
 
 ## Reproducibility and provenance
 
-- **Data source:** committed provider-shaped Recipe API fixture in `tests/fixtures/`, file `recipe_response_success.json`. It contains no credential; the report makes no network request.
-- **Recorded request parameters:** search `chicken`, no ingredient filter, page 1, two recipes per page; provider metadata reports English and six total results across three pages.
-- **Analysis filters:** prep time at most 30 minutes; calories at most 600 kilocalories per recipe as reported by the provider.
-- **Transformations:** the project's validation function checks the input; its summary function normalizes and ranks matches. Ranking is shortest prep time, then lowest calories, then name.
+- **Data source:** Recipe API (`https://recipeapi.io/`), retrieved on August 13, 2026.
+- **Saved searches:** chicken, salmon, vegetarian, pasta, turkey, and beef; page 1, up to 10 results per search.
+- **Evidence:** six committed raw JSON responses, six processed JSON summaries, and the derived `data/sample/weeknight-recipes.csv` snapshot.
+- **Units:** preparation, cooking, and total time are minutes; calories and protein are reported by the provider per serving; protein is grams.
+- **Analysis filters:** preparation time at most 30 minutes, total time at most 60 minutes, and calories at most 650 per serving. Qualifying recipes are then ordered by protein descending, total time ascending, and name.
+- **Missing values:** recipes missing preparation time or calories are excluded by the shared recommendation function. Other missing provider measurements remain visible but are not invented.
 - **Report render date:** `{python} date.today().isoformat()`.
 
-Rebuild from the repository root after `uv sync`:
-
-```text
-uv run python scripts/render_report.py
-```
+Rebuild the PDF from the repository root after `uv sync --locked` with `uv run python scripts/render_report.py`.

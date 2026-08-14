@@ -1,6 +1,6 @@
 [project]
 name = "weeknight-recipe-scout"
-version = "1.0.0"
+version = "1.1.0"
 description = "Recipe comparison and recommendations for busy weeknight cooks"
 readme = "README.md"
 requires-python = ">=3.11"

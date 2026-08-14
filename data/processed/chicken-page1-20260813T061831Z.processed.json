@@ -1,0 +1,874 @@
+{
+  "counts": {
+    "current_page": 1,
+    "last_page": 67,
+    "per_page": 10,
+    "recipes_returned": 10,
+    "recommendations": 10,
+    "total": 666
+  },
+  "links": {
+    "first": "https://recipeapi.io/api/v1/recipes?per_page=10&search=chicken&page=1",
+    "last": "https://recipeapi.io/api/v1/recipes?per_page=10&search=chicken&page=67",
+    "next": "https://recipeapi.io/api/v1/recipes?per_page=10&search=chicken&page=2",
+    "prev": null
+  },
+  "meta": {
+    "language": "en",
+    "path": "https://recipeapi.io/api/v1/recipes"
+  },
+  "query": {
+    "ingredients": "",
+    "page": 1,
+    "per_page": 10,
+    "search": "chicken"
+  },
+  "recipes": [
+    {
+      "calories": 320,
+      "cook_time_minutes": 70,
+      "cuisine": "chinese",
+      "description": "Abalone and Chicken Congee is a comforting Chinese rice porridge flavored with tender chicken and delicate abalone, simmered into a creamy, nourishing dish.",
+      "dietary_tags": [
+        "gluten_free",
+        "nut_free",
+        "halal"
+      ],
+      "difficulty": "medium",
+      "id": 10879,
+      "ingredients": [
+        "Salt",
+        "Water",
+        "Scallion",
+        "Chicken",
+        "Coriander",
+        "Rice",
+        "Ginger",
+        "White pepper",
+        "Abalone"
+      ],
+      "instruction_count": 9,
+      "instructions": [
+        "Rinse the rice under cold water until the water runs clear, then soak it in water for about 30 minutes and drain.",
+        "Place the chicken pieces and ginger slices into a large pot with 2 liters of water. Bring to a boil, then reduce the heat and simmer for 30 minutes to make a flavorful broth.",
+        "Remove the chicken from the broth and set aside to cool. Remove and discard the ginger slices from the broth.",
+        "Add the drained rice to the chicken broth and bring to a gentle boil. Reduce the heat and simmer, stirring occasionally to prevent sticking, for about 1 hour until the mixture becomes thick and creamy.",
+        "While the congee is cooking, shred the cooled chicken into bite-sized pieces.",
+        "Clean the abalone thoroughly, then slice into thin pieces.",
+        "Once the congee has thickened, add the shredded chicken and sliced abalone. Continue to simmer for another 10 minutes to heat through and meld flavors.",
+        "Season the congee with salt and white pepper to taste.",
+        "Ladle the congee into bowls and garnish with chopped spring onion and finely chopped coriander leaves before serving."
+      ],
+      "meal_type": "main",
+      "name": "Abalone and Chicken Congee",
+      "prep_time_minutes": 40,
+      "protein_grams": 30,
+      "servings": 4,
+      "total_time_minutes": 110
+    },
+    {
+      "calories": 180,
+      "cook_time_minutes": 60,
+      "cuisine": "chinese",
+      "description": "Abalone and Chicken Soup is a nourishing Chinese soup combining tender chicken and delicate abalone, simmered with ginger and goji berries for a flavorful and healthful broth.",
+      "dietary_tags": [
+        "gluten_free",
+        "nut_free",
+        "halal"
+      ],
+      "difficulty": "medium",
+      "id": 10228,
+      "ingredients": [
+        "Salt",
+        "Water",
+        "Scallion",
+        "Chicken",
+        "Ginger",
+        "White pepper",
+        "Abalone",
+        "Goji berry"
+      ],
+      "instruction_count": 7,
+      "instructions": [
+        "Rinse the abalone under cold water and scrub gently to clean, then slice thinly.",
+        "Cut the chicken into medium-sized pieces and blanch in boiling water for 5 minutes to remove impurities, then rinse and set aside.",
+        "In a large pot, bring 2 liters of water to a boil.",
+        "Add the chicken pieces to the boiling water and simmer for 30 minutes.",
+        "Add the sliced abalone, ginger slices, and goji berries to the pot and continue to simmer on low heat for another 30 minutes.",
+        "Season the soup with salt and white pepper to taste.",
+        "Garnish with chopped green onion before serving."
+      ],
+      "meal_type": "soup",
+      "name": "Abalone and Chicken Soup",
+      "prep_time_minutes": 15,
+      "protein_grams": 25,
+      "servings": 4,
+      "total_time_minutes": 75
+    },
+    {
+      "calories": 350,
+      "cook_time_minutes": 30,
+      "cuisine": "spanish",
+      "description": "Adobo de Pollo is a traditional Filipino marinated fried chicken seasoned with garlic, vinegar, soy sauce, and spices, resulting in flavorful, tender, and crispy chicken.",
+      "dietary_tags": [
+        "gluten_free",
+        "nut_free",
+        "halal",
+        "kosher"
+      ],
+      "difficulty": "medium",
+      "id": 5465,
+      "ingredients": [
+        "Salt",
+        "Black pepper",
+        "Vegetable oil",
+        "Garlic",
+        "Parsley",
+        "Chicken",
+        "Soy sauce",
+        "Bay leaf",
+        "Vinegar"
+      ],
+      "instruction_count": 7,
+      "instructions": [
+        "In a bowl, combine garlic, vinegar, soy sauce, black pepper, bay leaf, and salt to create the adobo marinade.",
+        "Place chicken pieces in the marinade, ensuring they are fully submerged. Cover and refrigerate for at least 2 hours, preferably overnight for best flavor.",
+        "Remove chicken from the marinade and pat dry with paper towels to remove excess liquid.",
+        "Heat vegetable oil in a frying pan over medium heat.",
+        "Fry the marinated chicken pieces until golden brown and cooked through, about 8-10 minutes per side depending on size.",
+        "Once cooked, drain the chicken on paper towels to remove excess oil.",
+        "Serve hot with steamed rice and garnish with chopped parsley if desired."
+      ],
+      "meal_type": "main",
+      "name": "Adobo De Pollo (Marinated Fried Chicken)",
+      "prep_time_minutes": 15,
+      "protein_grams": 35,
+      "servings": 6,
+      "total_time_minutes": 45
+    },
+    {
+      "calories": 450,
+      "cook_time_minutes": 40,
+      "cuisine": "american",
+      "description": "Alabama White Sauce Chicken is a Southern barbecue dish featuring grilled chicken coated with a tangy mayonnaise and vinegar-based white sauce, unique to Alabama's barbecue tradition.",
+      "dietary_tags": [
+        "dairy_free",
+        "gluten_free",
+        "nut_free"
+      ],
+      "difficulty": "medium",
+      "id": 69,
+      "ingredients": [
+        "Salt",
+        "Black pepper",
+        "Mayonnaise",
+        "Cayenne",
+        "Cider vinegar",
+        "Chicken",
+        "Lemon juice",
+        "Horseradish",
+        "Sugar"
+      ],
+      "instruction_count": 6,
+      "instructions": [
+        "Preheat the grill or oven to medium-high heat (about 190\u00b0C/375\u00b0F).",
+        "Season chicken pieces with salt and pepper.",
+        "In a bowl, combine mayonnaise, apple cider vinegar, lemon juice, horseradish, black pepper, salt, sugar, and cayenne pepper to make the Alabama white sauce.",
+        "Grill or bake the chicken until cooked through and the skin is crispy, about 30-40 minutes depending on piece size, turning occasionally.",
+        "Remove the chicken from heat and generously brush it with the Alabama white sauce while still hot.",
+        "Serve extra Alabama white sauce on the side for dipping."
+      ],
+      "meal_type": "main",
+      "name": "Alabama White Sauce Chicken",
+      "prep_time_minutes": 15,
+      "protein_grams": 45,
+      "servings": 6,
+      "total_time_minutes": 55
+    },
+    {
+      "calories": 450,
+      "cook_time_minutes": 20,
+      "cuisine": "mexican",
+      "description": "Alambre de Pollo is a popular Mexican dish featuring saut\u00e9ed chicken with bell peppers, onions, and tomatoes, topped with melted cheese and often served with tortillas and fresh garnishes.",
+      "dietary_tags": [
+        "halal"
+      ],
+      "difficulty": "medium",
+      "id": 4980,
+      "ingredients": [
+        "Salt",
+        "Black pepper",
+        "Cheddar cheese",
+        "Tomato",
+        "Onion",
+        "Vegetable oil",
+        "Cilantro",
+        "Chicken breast",
+        "Bell pepper",
+        "Lime"
+      ],
+      "instruction_count": 10,
+      "instructions": [
+        "Cut the chicken breast into bite-sized pieces and season with salt and pepper.",
+        "Chop the bell pepper, onion, and tomato into similar-sized pieces.",
+        "Heat the vegetable oil in a large skillet over medium-high heat.",
+        "Add the chicken pieces and cook until browned and cooked through, about 8-10 minutes.",
+        "Remove the chicken from the skillet and set aside.",
+        "In the same skillet, add the chopped bell pepper and onion, saut\u00e9 until softened, about 5 minutes.",
+        "Add the tomato and cook for another 2 minutes until slightly softened.",
+        "Return the chicken to the skillet and mix everything together.",
+        "Add shredded cheese on top and cover the skillet to allow the cheese to melt, about 2-3 minutes.",
+        "Sprinkle chopped fresh cilantro over the dish and serve with warmed flour tortillas, lime wedges, and optional sour cream or guacamole on the side."
+      ],
+      "meal_type": "main",
+      "name": "Alambre De Pollo (Chicken Alambre)",
+      "prep_time_minutes": 15,
+      "protein_grams": 35,
+      "servings": 4,
+      "total_time_minutes": 35
+    },
+    {
+      "calories": 350,
+      "cook_time_minutes": 15,
+      "cuisine": "spanish",
+      "description": "Almond Chicken is a flavorful Chinese-American dish featuring tender stir-fried chicken with crunchy almonds and vegetables in a savory sauce. It is a popular dish known for its combination of textures and rich taste.",
+      "dietary_tags": [
+        "gluten_free"
+      ],
+      "difficulty": "medium",
+      "id": 5591,
+      "ingredients": [
+        "Salt",
+        "Black pepper",
+        "Cornstarch",
+        "Vegetable oil",
+        "Garlic",
+        "Chicken breast",
+        "Bell pepper",
+        "Sugar",
+        "Soy sauce",
+        "Celery"
+      ],
+      "instruction_count": 10,
+      "instructions": [
+        "Soak the almond in warm water for about 30 minutes, then peel off the skin and set aside.",
+        "Cut the chicken breast into bite-sized pieces and season with salt and pepper.",
+        "Heat vegetable oil in a wok or large skillet over medium-high heat, then stir-fry the chicken pieces until golden and cooked through. Remove and set aside.",
+        "In the same pan, add a little more oil if needed and briefly stir-fry the peeled almonds until lightly golden. Remove and set aside.",
+        "Add chopped garlic and ginger to the pan and stir-fry until fragrant.",
+        "Add diced bell pepper and sliced celery, stir-frying until slightly tender but still crisp.",
+        "Return the chicken and almonds to the pan.",
+        "Mix soy sauce, chicken broth, sugar, and cornstarch in a bowl to make a sauce, then pour it into the pan.",
+        "Stir everything together and cook until the sauce thickens and coats the chicken and vegetables well.",
+        "Serve hot with steamed white rice."
+      ],
+      "meal_type": "main",
+      "name": "Almond Chicken",
+      "prep_time_minutes": 20,
+      "protein_grams": 35,
+      "servings": 2,
+      "total_time_minutes": 35
+    },
+    {
+      "calories": 400,
+      "cook_time_minutes": 15,
+      "cuisine": "american",
+      "description": "American chicken fried rice is a quick and flavorful dish that combines cooked rice with chicken, scrambled eggs, and vegetables, seasoned with soy and oyster sauces for a classic take on a popular Asian-American favorite.",
+      "dietary_tags": [
+        "dairy_free",
+        "nut_free"
+      ],
+      "difficulty": "easy",
+      "id": 213,
+      "ingredients": [
+        "Salt",
+        "Black pepper",
+        "Onion",
+        "Egg",
+        "Vegetable oil",
+        "Garlic",
+        "Chicken breast",
+        "Scallion",
+        "Soy sauce",
+        "Oyster sauce"
+      ],
+      "instruction_count": 9,
+      "instructions": [
+        "Cook the white rice according to package instructions and let it cool completely, preferably refrigerate for at least an hour.",
+        "Heat vegetable oil in a large skillet or wok over medium-high heat.",
+        "Add the diced chicken and cook until it is no longer pink and slightly browned, then remove from the skillet and set aside.",
+        "In the same skillet, add more oil if necessary and saut\u00e9 the chopped onion and garlic until fragrant and translucent.",
+        "Add the mixed vegetables to the skillet and cook until tender.",
+        "Push the vegetables to one side of the skillet and scramble the beaten eggs on the other side until cooked through.",
+        "Combine the eggs with the vegetables and add the cooked rice and chicken back into the skillet, stirring well to mix all ingredients.",
+        "Pour soy sauce and a dash of oyster sauce over the rice mixture and stir fry for several minutes until everything is heated through and well combined.",
+        "Season with salt and pepper to taste, garnish with sliced green onions, and serve hot."
+      ],
+      "meal_type": "main",
+      "name": "American Chicken Fried Rice",
+      "prep_time_minutes": 15,
+      "protein_grams": 25,
+      "servings": 4,
+      "total_time_minutes": 30
+    },
+    {
+      "calories": 350,
+      "cook_time_minutes": 15,
+      "cuisine": "american",
+      "description": "American chicken stir fry is a fast and flavorful dish featuring tender chicken strips and crisp vegetables cooked in a savory soy-based sauce, commonly served over rice or noodles.",
+      "dietary_tags": [
+        "dairy_free",
+        "nut_free"
+      ],
+      "difficulty": "easy",
+      "id": 206,
+      "ingredients": [
+        "Onion",
+        "Cornstarch",
+        "Vegetable oil",
+        "Garlic",
+        "Chicken breast",
+        "Brown sugar",
+        "Water",
+        "Scallion",
+        "Bell pepper",
+        "Carrot"
+      ],
+      "instruction_count": 12,
+      "instructions": [
+        "Slice the chicken breast into thin strips.",
+        "Heat vegetable oil in a large skillet or wok over medium-high heat.",
+        "Add the chicken strips and stir-fry until cooked through and slightly browned, about 5-7 minutes.",
+        "Remove the chicken from the skillet and set aside.",
+        "In the same skillet, add a little more vegetable oil if needed, then add sliced bell pepper, sliced carrot, and chopped onion.",
+        "Stir-fry the vegetables until crisp-tender, about 4-5 minutes.",
+        "Add minced garlic and grated ginger, and cook for another 1 minute until fragrant.",
+        "Return the cooked chicken to the skillet with the vegetables.",
+        "In a small bowl, mix soy sauce, oyster sauce, brown sugar, and cornstarch dissolved in water.",
+        "Pour the sauce mixture into the skillet and stir well to coat all ingredients.",
+        "Cook and stir for 2-3 minutes until the sauce thickens.",
+        "Garnish with sliced green onion and serve hot over steamed rice or noodles."
+      ],
+      "meal_type": "main",
+      "name": "American Chicken Stir Fry",
+      "prep_time_minutes": 15,
+      "protein_grams": 30,
+      "servings": 4,
+      "total_time_minutes": 30
+    },
+    {
+      "calories": 350,
+      "cook_time_minutes": 60,
+      "cuisine": "turkish",
+      "description": "Araba\u015f\u0131 Soup is a traditional chicken and dough soup from Kastamonu, Turkey, featuring hand-rolled wheat dough cooked in rich chicken broth, known for its comforting and hearty taste.",
+      "dietary_tags": [
+        "gluten_free"
+      ],
+      "difficulty": "medium",
+      "id": 6969,
+      "ingredients": [
+        "Salt",
+        "Butter",
+        "Parsley",
+        "Chicken",
+        "Crushed red pepper",
+        "Warm water",
+        "Wheat flour"
+      ],
+      "instruction_count": 9,
+      "instructions": [
+        "Mix the wheat flour and warm water in a large bowl to form a smooth, thick dough. Cover and let it rest while preparing the broth.",
+        "In a large pot, add the chicken pieces and cover with water. Bring to a boil, then reduce to a simmer and cook until the chicken is tender, about 45 minutes.",
+        "Remove the chicken from the broth and set aside to cool. Strain the broth to remove impurities and return the clear broth to the pot.",
+        "Shred the cooled chicken into small pieces and return some of it to the broth for flavor.",
+        "Shape the rested dough into thin, flat sheets or ribbons by rolling it out and cutting it thinly.",
+        "Bring the broth to a gentle boil and add the dough strips carefully to avoid sticking.",
+        "Cook the dough in the broth until it becomes tender and floats to the surface, about 8-10 minutes.",
+        "Season the soup with salt, crushed red pepper, and if desired, add a drizzle of melted butter or chili oil for extra flavor.",
+        "Serve hot, garnished with the shredded chicken and optionally fresh parsley for a fresh touch."
+      ],
+      "meal_type": "soup",
+      "name": "Araba\u015f\u0131 Soup (Chicken Dough Soup from Kastamonu)",
+      "prep_time_minutes": 30,
+      "protein_grams": 28,
+      "servings": 4,
+      "total_time_minutes": 90
+    },
+    {
+      "calories": 550,
+      "cook_time_minutes": 30,
+      "cuisine": "mexican",
+      "description": "Arroz con Pollo is a traditional Latin American dish featuring chicken cooked with rice, vegetables, and spices for a flavorful and comforting meal.",
+      "dietary_tags": [
+        "halal",
+        "kosher"
+      ],
+      "difficulty": "medium",
+      "id": 4826,
+      "ingredients": [
+        "Olive oil",
+        "Salt",
+        "Black pepper",
+        "Onion",
+        "Garlic",
+        "Cumin",
+        "Parsley",
+        "Tomato paste",
+        "Chicken",
+        "Oregano"
+      ],
+      "instruction_count": 12,
+      "instructions": [
+        "Heat olive oil in a large skillet over medium heat.",
+        "Add chopped onion, garlic, and green bell pepper; saut\u00e9 until softened.",
+        "Add chicken pieces and cook until browned on all sides.",
+        "Stir in tomato paste and cook for a minute.",
+        "Add rice and stir well to coat with the oil and vegetables.",
+        "Pour in chicken broth and add saffron or turmeric for color.",
+        "Season with salt, pepper, cumin, and oregano.",
+        "Bring to a boil, then reduce heat to low and cover the skillet.",
+        "Simmer for about 20 minutes until rice is cooked and chicken is tender.",
+        "Add frozen peas during the last 5 minutes of cooking.",
+        "Once done, let it rest covered for 5 minutes before serving.",
+        "Fluff the rice with a fork, garnish with chopped parsley, and serve."
+      ],
+      "meal_type": "main",
+      "name": "Arroz Con Pollo (Rice with Chicken)",
+      "prep_time_minutes": 15,
+      "protein_grams": 35,
+      "servings": 4,
+      "total_time_minutes": 45
+    }
+  ],
+  "recommendation_limits": {
+    "max_calories": 1500,
+    "max_prep_minutes": 120
+  },
+  "recommendations": [
+    {
+      "calories": 180,
+      "cook_time_minutes": 60,
+      "cuisine": "chinese",
+      "description": "Abalone and Chicken Soup is a nourishing Chinese soup combining tender chicken and delicate abalone, simmered with ginger and goji berries for a flavorful and healthful broth.",
+      "dietary_tags": [
+        "gluten_free",
+        "nut_free",
+        "halal"
+      ],
+      "difficulty": "medium",
+      "id": 10228,
+      "ingredients": [
+        "Salt",
+        "Water",
+        "Scallion",
+        "Chicken",
+        "Ginger",
+        "White pepper",
+        "Abalone",
+        "Goji berry"
+      ],
+      "instruction_count": 7,
+      "instructions": [
+        "Rinse the abalone under cold water and scrub gently to clean, then slice thinly.",
+        "Cut the chicken into medium-sized pieces and blanch in boiling water for 5 minutes to remove impurities, then rinse and set aside.",
+        "In a large pot, bring 2 liters of water to a boil.",
+        "Add the chicken pieces to the boiling water and simmer for 30 minutes.",
+        "Add the sliced abalone, ginger slices, and goji berries to the pot and continue to simmer on low heat for another 30 minutes.",
+        "Season the soup with salt and white pepper to taste.",
+        "Garnish with chopped green onion before serving."
+      ],
+      "meal_type": "soup",
+      "name": "Abalone and Chicken Soup",
+      "prep_time_minutes": 15,
+      "protein_grams": 25,
+      "recommendation_rank": 1,
+      "servings": 4,
+      "total_time_minutes": 75
+    },
+    {
+      "calories": 350,
+      "cook_time_minutes": 30,
+      "cuisine": "spanish",
+      "description": "Adobo de Pollo is a traditional Filipino marinated fried chicken seasoned with garlic, vinegar, soy sauce, and spices, resulting in flavorful, tender, and crispy chicken.",
+      "dietary_tags": [
+        "gluten_free",
+        "nut_free",
+        "halal",
+        "kosher"
+      ],
+      "difficulty": "medium",
+      "id": 5465,
+      "ingredients": [
+        "Salt",
+        "Black pepper",
+        "Vegetable oil",
+        "Garlic",
+        "Parsley",
+        "Chicken",
+        "Soy sauce",
+        "Bay leaf",
+        "Vinegar"
+      ],
+      "instruction_count": 7,
+      "instructions": [
+        "In a bowl, combine garlic, vinegar, soy sauce, black pepper, bay leaf, and salt to create the adobo marinade.",
+        "Place chicken pieces in the marinade, ensuring they are fully submerged. Cover and refrigerate for at least 2 hours, preferably overnight for best flavor.",
+        "Remove chicken from the marinade and pat dry with paper towels to remove excess liquid.",
+        "Heat vegetable oil in a frying pan over medium heat.",
+        "Fry the marinated chicken pieces until golden brown and cooked through, about 8-10 minutes per side depending on size.",
+        "Once cooked, drain the chicken on paper towels to remove excess oil.",
+        "Serve hot with steamed rice and garnish with chopped parsley if desired."
+      ],
+      "meal_type": "main",
+      "name": "Adobo De Pollo (Marinated Fried Chicken)",
+      "prep_time_minutes": 15,
+      "protein_grams": 35,
+      "recommendation_rank": 2,
+      "servings": 6,
+      "total_time_minutes": 45
+    },
+    {
+      "calories": 350,
+      "cook_time_minutes": 15,
+      "cuisine": "american",
+      "description": "American chicken stir fry is a fast and flavorful dish featuring tender chicken strips and crisp vegetables cooked in a savory soy-based sauce, commonly served over rice or noodles.",
+      "dietary_tags": [
+        "dairy_free",
+        "nut_free"
+      ],
+      "difficulty": "easy",
+      "id": 206,
+      "ingredients": [
+        "Onion",
+        "Cornstarch",
+        "Vegetable oil",
+        "Garlic",
+        "Chicken breast",
+        "Brown sugar",
+        "Water",
+        "Scallion",
+        "Bell pepper",
+        "Carrot"
+      ],
+      "instruction_count": 12,
+      "instructions": [
+        "Slice the chicken breast into thin strips.",
+        "Heat vegetable oil in a large skillet or wok over medium-high heat.",
+        "Add the chicken strips and stir-fry until cooked through and slightly browned, about 5-7 minutes.",
+        "Remove the chicken from the skillet and set aside.",
+        "In the same skillet, add a little more vegetable oil if needed, then add sliced bell pepper, sliced carrot, and chopped onion.",
+        "Stir-fry the vegetables until crisp-tender, about 4-5 minutes.",
+        "Add minced garlic and grated ginger, and cook for another 1 minute until fragrant.",
+        "Return the cooked chicken to the skillet with the vegetables.",
+        "In a small bowl, mix soy sauce, oyster sauce, brown sugar, and cornstarch dissolved in water.",
+        "Pour the sauce mixture into the skillet and stir well to coat all ingredients.",
+        "Cook and stir for 2-3 minutes until the sauce thickens.",
+        "Garnish with sliced green onion and serve hot over steamed rice or noodles."
+      ],
+      "meal_type": "main",
+      "name": "American Chicken Stir Fry",
+      "prep_time_minutes": 15,
+      "protein_grams": 30,
+      "recommendation_rank": 3,
+      "servings": 4,
+      "total_time_minutes": 30
+    },
+    {
+      "calories": 400,
+      "cook_time_minutes": 15,
+      "cuisine": "american",
+      "description": "American chicken fried rice is a quick and flavorful dish that combines cooked rice with chicken, scrambled eggs, and vegetables, seasoned with soy and oyster sauces for a classic take on a popular Asian-American favorite.",
+      "dietary_tags": [
+        "dairy_free",
+        "nut_free"
+      ],
+      "difficulty": "easy",
+      "id": 213,
+      "ingredients": [
+        "Salt",
+        "Black pepper",
+        "Onion",
+        "Egg",
+        "Vegetable oil",
+        "Garlic",
+        "Chicken breast",
+        "Scallion",
+        "Soy sauce",
+        "Oyster sauce"
+      ],
+      "instruction_count": 9,
+      "instructions": [
+        "Cook the white rice according to package instructions and let it cool completely, preferably refrigerate for at least an hour.",
+        "Heat vegetable oil in a large skillet or wok over medium-high heat.",
+        "Add the diced chicken and cook until it is no longer pink and slightly browned, then remove from the skillet and set aside.",
+        "In the same skillet, add more oil if necessary and saut\u00e9 the chopped onion and garlic until fragrant and translucent.",
+        "Add the mixed vegetables to the skillet and cook until tender.",
+        "Push the vegetables to one side of the skillet and scramble the beaten eggs on the other side until cooked through.",
+        "Combine the eggs with the vegetables and add the cooked rice and chicken back into the skillet, stirring well to mix all ingredients.",
+        "Pour soy sauce and a dash of oyster sauce over the rice mixture and stir fry for several minutes until everything is heated through and well combined.",
+        "Season with salt and pepper to taste, garnish with sliced green onions, and serve hot."
+      ],
+      "meal_type": "main",
+      "name": "American Chicken Fried Rice",
+      "prep_time_minutes": 15,
+      "protein_grams": 25,
+      "recommendation_rank": 4,
+      "servings": 4,
+      "total_time_minutes": 30
+    },
+    {
+      "calories": 450,
+      "cook_time_minutes": 40,
+      "cuisine": "american",
+      "description": "Alabama White Sauce Chicken is a Southern barbecue dish featuring grilled chicken coated with a tangy mayonnaise and vinegar-based white sauce, unique to Alabama's barbecue tradition.",
+      "dietary_tags": [
+        "dairy_free",
+        "gluten_free",
+        "nut_free"
+      ],
+      "difficulty": "medium",
+      "id": 69,
+      "ingredients": [
+        "Salt",
+        "Black pepper",
+        "Mayonnaise",
+        "Cayenne",
+        "Cider vinegar",
+        "Chicken",
+        "Lemon juice",
+        "Horseradish",
+        "Sugar"
+      ],
+      "instruction_count": 6,
+      "instructions": [
+        "Preheat the grill or oven to medium-high heat (about 190\u00b0C/375\u00b0F).",
+        "Season chicken pieces with salt and pepper.",
+        "In a bowl, combine mayonnaise, apple cider vinegar, lemon juice, horseradish, black pepper, salt, sugar, and cayenne pepper to make the Alabama white sauce.",
+        "Grill or bake the chicken until cooked through and the skin is crispy, about 30-40 minutes depending on piece size, turning occasionally.",
+        "Remove the chicken from heat and generously brush it with the Alabama white sauce while still hot.",
+        "Serve extra Alabama white sauce on the side for dipping."
+      ],
+      "meal_type": "main",
+      "name": "Alabama White Sauce Chicken",
+      "prep_time_minutes": 15,
+      "protein_grams": 45,
+      "recommendation_rank": 5,
+      "servings": 6,
+      "total_time_minutes": 55
+    },
+    {
+      "calories": 450,
+      "cook_time_minutes": 20,
+      "cuisine": "mexican",
+      "description": "Alambre de Pollo is a popular Mexican dish featuring saut\u00e9ed chicken with bell peppers, onions, and tomatoes, topped with melted cheese and often served with tortillas and fresh garnishes.",
+      "dietary_tags": [
+        "halal"
+      ],
+      "difficulty": "medium",
+      "id": 4980,
+      "ingredients": [
+        "Salt",
+        "Black pepper",
+        "Cheddar cheese",
+        "Tomato",
+        "Onion",
+        "Vegetable oil",
+        "Cilantro",
+        "Chicken breast",
+        "Bell pepper",
+        "Lime"
+      ],
+      "instruction_count": 10,
+      "instructions": [
+        "Cut the chicken breast into bite-sized pieces and season with salt and pepper.",
+        "Chop the bell pepper, onion, and tomato into similar-sized pieces.",
+        "Heat the vegetable oil in a large skillet over medium-high heat.",
+        "Add the chicken pieces and cook until browned and cooked through, about 8-10 minutes.",
+        "Remove the chicken from the skillet and set aside.",
+        "In the same skillet, add the chopped bell pepper and onion, saut\u00e9 until softened, about 5 minutes.",
+        "Add the tomato and cook for another 2 minutes until slightly softened.",
+        "Return the chicken to the skillet and mix everything together.",
+        "Add shredded cheese on top and cover the skillet to allow the cheese to melt, about 2-3 minutes.",
+        "Sprinkle chopped fresh cilantro over the dish and serve with warmed flour tortillas, lime wedges, and optional sour cream or guacamole on the side."
+      ],
+      "meal_type": "main",
+      "name": "Alambre De Pollo (Chicken Alambre)",
+      "prep_time_minutes": 15,
+      "protein_grams": 35,
+      "recommendation_rank": 6,
+      "servings": 4,
+      "total_time_minutes": 35
+    },
+    {
+      "calories": 550,
+      "cook_time_minutes": 30,
+      "cuisine": "mexican",
+      "description": "Arroz con Pollo is a traditional Latin American dish featuring chicken cooked with rice, vegetables, and spices for a flavorful and comforting meal.",
+      "dietary_tags": [
+        "halal",
+        "kosher"
+      ],
+      "difficulty": "medium",
+      "id": 4826,
+      "ingredients": [
+        "Olive oil",
+        "Salt",
+        "Black pepper",
+        "Onion",
+        "Garlic",
+        "Cumin",
+        "Parsley",
+        "Tomato paste",
+        "Chicken",
+        "Oregano"
+      ],
+      "instruction_count": 12,
+      "instructions": [
+        "Heat olive oil in a large skillet over medium heat.",
+        "Add chopped onion, garlic, and green bell pepper; saut\u00e9 until softened.",
+        "Add chicken pieces and cook until browned on all sides.",
+        "Stir in tomato paste and cook for a minute.",
+        "Add rice and stir well to coat with the oil and vegetables.",
+        "Pour in chicken broth and add saffron or turmeric for color.",
+        "Season with salt, pepper, cumin, and oregano.",
+        "Bring to a boil, then reduce heat to low and cover the skillet.",
+        "Simmer for about 20 minutes until rice is cooked and chicken is tender.",
+        "Add frozen peas during the last 5 minutes of cooking.",
+        "Once done, let it rest covered for 5 minutes before serving.",
+        "Fluff the rice with a fork, garnish with chopped parsley, and serve."
+      ],
+      "meal_type": "main",
+      "name": "Arroz Con Pollo (Rice with Chicken)",
+      "prep_time_minutes": 15,
+      "protein_grams": 35,
+      "recommendation_rank": 7,
+      "servings": 4,
+      "total_time_minutes": 45
+    },
+    {
+      "calories": 350,
+      "cook_time_minutes": 15,
+      "cuisine": "spanish",
+      "description": "Almond Chicken is a flavorful Chinese-American dish featuring tender stir-fried chicken with crunchy almonds and vegetables in a savory sauce. It is a popular dish known for its combination of textures and rich taste.",
+      "dietary_tags": [
+        "gluten_free"
+      ],
+      "difficulty": "medium",
+      "id": 5591,
+      "ingredients": [
+        "Salt",
+        "Black pepper",
+        "Cornstarch",
+        "Vegetable oil",
+        "Garlic",
+        "Chicken breast",
+        "Bell pepper",
+        "Sugar",
+        "Soy sauce",
+        "Celery"
+      ],
+      "instruction_count": 10,
+      "instructions": [
+        "Soak the almond in warm water for about 30 minutes, then peel off the skin and set aside.",
+        "Cut the chicken breast into bite-sized pieces and season with salt and pepper.",
+        "Heat vegetable oil in a wok or large skillet over medium-high heat, then stir-fry the chicken pieces until golden and cooked through. Remove and set aside.",
+        "In the same pan, add a little more oil if needed and briefly stir-fry the peeled almonds until lightly golden. Remove and set aside.",
+        "Add chopped garlic and ginger to the pan and stir-fry until fragrant.",
+        "Add diced bell pepper and sliced celery, stir-frying until slightly tender but still crisp.",
+        "Return the chicken and almonds to the pan.",
+        "Mix soy sauce, chicken broth, sugar, and cornstarch in a bowl to make a sauce, then pour it into the pan.",
+        "Stir everything together and cook until the sauce thickens and coats the chicken and vegetables well.",
+        "Serve hot with steamed white rice."
+      ],
+      "meal_type": "main",
+      "name": "Almond Chicken",
+      "prep_time_minutes": 20,
+      "protein_grams": 35,
+      "recommendation_rank": 8,
+      "servings": 2,
+      "total_time_minutes": 35
+    },
+    {
+      "calories": 350,
+      "cook_time_minutes": 60,
+      "cuisine": "turkish",
+      "description": "Araba\u015f\u0131 Soup is a traditional chicken and dough soup from Kastamonu, Turkey, featuring hand-rolled wheat dough cooked in rich chicken broth, known for its comforting and hearty taste.",
+      "dietary_tags": [
+        "gluten_free"
+      ],
+      "difficulty": "medium",
+      "id": 6969,
+      "ingredients": [
+        "Salt",
+        "Butter",
+        "Parsley",
+        "Chicken",
+        "Crushed red pepper",
+        "Warm water",
+        "Wheat flour"
+      ],
+      "instruction_count": 9,
+      "instructions": [
+        "Mix the wheat flour and warm water in a large bowl to form a smooth, thick dough. Cover and let it rest while preparing the broth.",
+        "In a large pot, add the chicken pieces and cover with water. Bring to a boil, then reduce to a simmer and cook until the chicken is tender, about 45 minutes.",
+        "Remove the chicken from the broth and set aside to cool. Strain the broth to remove impurities and return the clear broth to the pot.",
+        "Shred the cooled chicken into small pieces and return some of it to the broth for flavor.",
+        "Shape the rested dough into thin, flat sheets or ribbons by rolling it out and cutting it thinly.",
+        "Bring the broth to a gentle boil and add the dough strips carefully to avoid sticking.",
+        "Cook the dough in the broth until it becomes tender and floats to the surface, about 8-10 minutes.",
+        "Season the soup with salt, crushed red pepper, and if desired, add a drizzle of melted butter or chili oil for extra flavor.",
+        "Serve hot, garnished with the shredded chicken and optionally fresh parsley for a fresh touch."
+      ],
+      "meal_type": "soup",
+      "name": "Araba\u015f\u0131 Soup (Chicken Dough Soup from Kastamonu)",
+      "prep_time_minutes": 30,
+      "protein_grams": 28,
+      "recommendation_rank": 9,
+      "servings": 4,
+      "total_time_minutes": 90
+    },
+    {
+      "calories": 320,
+      "cook_time_minutes": 70,
+      "cuisine": "chinese",
+      "description": "Abalone and Chicken Congee is a comforting Chinese rice porridge flavored with tender chicken and delicate abalone, simmered into a creamy, nourishing dish.",
+      "dietary_tags": [
+        "gluten_free",
+        "nut_free",
+        "halal"
+      ],
+      "difficulty": "medium",
+      "id": 10879,
+      "ingredients": [
+        "Salt",
+        "Water",
+        "Scallion",
+        "Chicken",
+        "Coriander",
+        "Rice",
+        "Ginger",
+        "White pepper",
+        "Abalone"
+      ],
+      "instruction_count": 9,
+      "instructions": [
+        "Rinse the rice under cold water until the water runs clear, then soak it in water for about 30 minutes and drain.",
+        "Place the chicken pieces and ginger slices into a large pot with 2 liters of water. Bring to a boil, then reduce the heat and simmer for 30 minutes to make a flavorful broth.",
+        "Remove the chicken from the broth and set aside to cool. Remove and discard the ginger slices from the broth.",
+        "Add the drained rice to the chicken broth and bring to a gentle boil. Reduce the heat and simmer, stirring occasionally to prevent sticking, for about 1 hour until the mixture becomes thick and creamy.",
+        "While the congee is cooking, shred the cooled chicken into bite-sized pieces.",
+        "Clean the abalone thoroughly, then slice into thin pieces.",
+        "Once the congee has thickened, add the shredded chicken and sliced abalone. Continue to simmer for another 10 minutes to heat through and meld flavors.",
+        "Season the congee with salt and white pepper to taste.",
+        "Ladle the congee into bowls and garnish with chopped spring onion and finely chopped coriander leaves before serving."
+      ],
+      "meal_type": "main",
+      "name": "Abalone and Chicken Congee",
+      "prep_time_minutes": 40,
+      "protein_grams": 30,
+      "recommendation_rank": 10,
+      "servings": 4,
+      "total_time_minutes": 110
+    }
+  ]
+}

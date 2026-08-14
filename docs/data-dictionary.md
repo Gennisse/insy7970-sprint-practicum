@@ -38,12 +38,20 @@ The same fields occur in `recipes` and `recommendations`; the latter also contai
 | `difficulty` | string or null | Provider category | Copied without category recoding |
 | `meal_type` | string or null | Provider category | Copied without category recoding |
 | `prep_time_minutes` | integer or null | Minutes | Copied from provider; null prevents recommendation |
-| `calories` | integer or null | Kilocalories per recipe as reported by provider | Copied from provider; null prevents recommendation |
-| `ingredients` | array | Up to 10 provider values | First 10 elements retained; missing/non-list becomes empty array |
+| `calories` | integer or null | Kilocalories per serving | Normalized from provider `calories_per_serving` (or legacy `calories`); null prevents recommendation |
+| `cook_time_minutes` | integer or null | Minutes | Normalized from provider `cook_time`; null remains unknown |
+| `total_time_minutes` | integer or null | Minutes | Prep plus cook time when both are known; otherwise null |
+| `protein_grams` | number or null | Grams per serving | Normalized from provider `protein`; null remains unknown |
+| `servings` | integer or null | Provider serving count | Copied from provider; null remains unknown |
+| `dietary_tags` | array of strings | Provider values such as `gluten_free`, `nut_free`, or `halal` | Copied from provider; missing becomes an empty array |
+| `ingredients` | array | Up to 10 ingredient names | Names extracted from provider ingredient objects; first 10 retained; missing/non-list becomes empty array |
+| `instructions` | array | Ordered cooking steps | Copied from Recipe API; missing/non-list becomes an empty array. |
 | `instruction_count` | integer | Count, 0 or greater | Length of provider instructions; missing/non-list becomes 0 |
 | `recommendation_rank` | integer | 1 is best | Added only to qualifying copies; prep ascending, calories ascending, name ascending |
 
 ## Provenance and files
+
+The offline dashboard CSV includes `source_search` (the API search that returned the recipe) and `retrieved_at_utc` (UTC timestamp extracted from the supporting processed filename). Its raw and processed source files are committed under `data/raw/` and `data/processed/`.
 
 The matching file in `data/raw/` preserves the provider response text before validation or transformation. Both filenames share a search/page/UTC timestamp stem. The processed file deliberately excludes credentials and acquisition headers. The reproducible report uses the committed provider-shaped test fixture named in the report, rather than a live request, so anyone can rebuild it without a secret.
 
